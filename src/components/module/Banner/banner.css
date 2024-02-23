@@ -1,0 +1,70 @@
+.banner{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    min-height: 600px;
+    height: 100%;
+    align-items: center;
+}
+.ban_img{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+}
+.ban_txt{
+    height: 500px;
+    min-height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.ban_txt_up{
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.ban_txt_up p:first-child{
+    font-family: 'TTT';
+    font-size: 24px;
+    color: rgba(30, 30, 30, 1)
+}
+.ban_txt_up p:last-child{
+    font-family: 'TTT';
+    font-size: 16px;
+    color: rgba(30, 30, 30, 1)
+}
+.ban_txt_up h1{
+    font-family: 'TTT';
+    font-size: 85px;
+    font-weight: bold;
+    color: #678CD3;
+}
+.ban_btn{
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+}
+.ban_btn button{
+    color: white;
+    font-family: 'TTT';
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 16px;
+    background-color: #678CD3;
+    border: 0px;
+    padding: 20px 35px;
+}
+.ban_img :nth-child(1){
+    width: 50%;
+}
+.ban_img :nth-last-child(1){
+    width: 40%;
+}

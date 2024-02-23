@@ -1,0 +1,46 @@
+.don_card{
+    width: 408px;
+    height: 448px;
+    border: 5px solid #678CD3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    justify-content: space-around;
+    background-color: white;
+    box-shadow: 0px 11px 32px 0px rgba(0, 0, 0, 0.25);
+}
+.don_card img :nth-child(1){
+    width: 344px;
+    height: 280px;
+}
+.card_middle{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card_middle p{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'TTT';
+    color:#678CD3;
+}
+.blood_type{
+    background-color: #678CD3;
+    padding: 15px 40px;
+    border-radius: 16px;
+}
+.blood_type p{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'TTT';
+    color: white;
+}
+.address{
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+    align-items: center;
+    gap: 20px;
+}

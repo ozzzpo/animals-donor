@@ -1,0 +1,21 @@
+.donors{
+    background-color: #F1F7FF;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.donors h1{
+    font-family: 'TTT';
+    font-size: 40px;
+    font-weight: 100;
+    align-self: flex-start;
+    padding: 60px 70px;
+}
+.don_cards{
+    width: 90%;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'TTT';
+    src: url('../public/fonts/TTTravels-Regular.ttf');
+}
+.App{
+    font-family: 'TTT';
+    font-size: 16px;
+    font-weight: 400;
+    
+}
+a{
+    text-decoration: none;
+}

@@ -1,47 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../store/slices/userSlice";
+import Header from "../../components/common/Header/Header";
+import Banner from "../../components/module/Banner/Banner";
+import Important from "../../components/module/Important/Important";
+import Donors from "../../components/module/Donors/Donors";
+import './main.css'
+
 
 function Main() {
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPw, setRegisterPw] = useState("");
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPw, setLoginPw] = useState("");
-
-  const dispatch = useDispatch();
   return (
-    <div>
-      <p>Login</p>
-      <input
-        type='text'
-        value={loginEmail}
-        onChange={(e) => setLoginEmail(e.target.value)}
-      />
-      <p>Login password</p>
-      <input
-        type='text'
-        value={loginPw}
-        onChange={(e) => setLoginPw(e.target.value)}
-      />
-      <button
-        onClick={() =>
-          dispatch(loginUser({ login: loginEmail, password: loginPw }))
-        }
-      >
-        Login
-      </button>
-      <p>Reigister</p>
-      <input
-        type='text'
-        value={registerEmail}
-        onChange={(e) => setRegisterEmail(e.target.value)}
-      />
-      <p>Register password</p>
-      <input
-        type='text'
-        value={registerPw}
-        onChange={(e) => setRegisterPw(e.target.value)}
-      />
+    <div className="main">
+      <Header/>
+      <Banner/>
+      <Important/>
+      <Donors/>
     </div>
   );
 }

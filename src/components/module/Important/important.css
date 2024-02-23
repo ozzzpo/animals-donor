@@ -1,0 +1,14 @@
+.important{
+    background-color: #F1F7FF;
+    height: 100%;
+}
+.important p{
+    font-size: 40px;
+    padding: 60px 70px;
+}
+.imp_cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
