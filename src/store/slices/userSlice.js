@@ -6,9 +6,10 @@ export const loginUser = createAsyncThunk(
   async ({ login, password }, {}) => {
     try {
       const response = await authApi().loginUser(login, password);
-      console.log(response);
+
       localStorage.setItem("authToken", response.data.access_token);
       const me = await authApi().getMe();
+      localStorage.setItem("user", JSON.stringify(me.data));
       return { ...me.data, ...response.data };
     } catch (error) {
       console.error(error);

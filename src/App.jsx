@@ -5,7 +5,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 function App() {
   const router = createBrowserRouter(routes);
-  const user = useSelector((state) => state.user.user);
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user);
   return (
     <AuthProvider user={user}>
       <RouterProvider router={router} />
