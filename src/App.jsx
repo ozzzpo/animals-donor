@@ -1,5 +1,16 @@
+import { useSelector } from "react-redux";
+import AuthProvider from "./router/AuthProvider";
+import { routes } from "./router/router-data";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
 function App() {
-  return <div className="App"></div>;
+  const router = createBrowserRouter(routes);
+  const user = useSelector((state) => state.user.user);
+  return (
+    <AuthProvider user={user}>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }
 
 export default App;
