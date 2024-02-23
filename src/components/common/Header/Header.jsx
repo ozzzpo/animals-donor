@@ -1,8 +1,27 @@
-import ReactModal from "react-modal";
+import { useState } from "react";
+import Modal from "../../modules/Modal/Modal";
 import "./header.css";
-function Header({ isOpen, setIsOpen }) {
-  const openModal = () => {
-    setIsOpen(true);
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+function Header() {
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    view: "",
+  });
+  const closeModal = () => {
+    setModalState((state) => ({
+      ...state,
+      isOpen: false,
+      view: "",
+    }));
   };
   return (
     <>
@@ -23,14 +42,35 @@ function Header({ isOpen, setIsOpen }) {
           </div>
         </div>
         <div className='logIn'>
-          <button>Войти</button>
+          <button
+            onClick={() => {
+              setModalState(() => ({
+                isOpen: true,
+                view: "login",
+              }));
+            }}
+          >
+            Войти
+          </button>
           <p>/</p>
-          <button>Регистрация</button>
+          <button
+            onClick={() => {
+              setModalState(() => ({
+                isOpen: true,
+                view: "register-1",
+              }));
+            }}
+          >
+            Регистрация
+          </button>
         </div>
       </div>
       <div className='headLine'></div>
-
-      <ReactModal isOpen={isOpen}></ReactModal>
+      <Modal
+        modalState={modalState}
+        closeModal={closeModal}
+        customStyles={customStyles}
+      />
     </>
   );
 }

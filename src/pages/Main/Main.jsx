@@ -7,10 +7,9 @@ import "./main.css";
 import { useState } from "react";
 
 function Main() {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className='main'>
-      <Header isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Header />
       <Banner />
       <Important />
       <Donors />
