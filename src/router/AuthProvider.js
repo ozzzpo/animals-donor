@@ -1,10 +1,10 @@
 import { createContext, useContext } from "react";
 import { useSelector } from "react-redux";
 
-const AuthContext = createContext({});
+const AuthContext = createContext(false);
 
-export default function AuthProvider({ children, user }) {
-  return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
+export default function AuthProvider({ children, isAuth }) {
+  return <AuthContext.Provider value={isAuth}>{children}</AuthContext.Provider>;
 }
 
 export const useAuth = () => {

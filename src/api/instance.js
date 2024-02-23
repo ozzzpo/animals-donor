@@ -26,6 +26,7 @@ apiClient.interceptors.response.use(
   (error) => {
     if (error.response.status === 401) {
       localStorage.removeItem("authToken");
+      localStorage.removeItem("user");
       console.log("unauth");
     }
     console.log(error.message);

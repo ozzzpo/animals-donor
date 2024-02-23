@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import authApi from "../../api/services/auth.service";
 
 export const loginUser = createAsyncThunk(
@@ -33,30 +33,14 @@ export const getMe = createAsyncThunk("user/getMe", async () => {
   }
 });
 
-const userSlice = createSlice({
-  name: "user",
-  initialState: {
-    user: {},
-    isAuth: false,
-    error: null,
-  },
-  reducers: {
-    logout() {},
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(loginUser.fulfilled, (state, action) => {
-        state.user = action.payload;
-        state.isAuth = true;
-      })
-      .addCase(loginUser.rejected, (state) => {
-        console.log(state);
-        state.user = {};
-        state.isAuth = false;
-        state.error = "";
-      })
-      .addCase(registerUser.fulfilled, (state) => {});
-  },
-});
-export default userSlice.reducer;
-export const { login, registration, logout } = userSlice.actions;
+export const changeMe = createAsyncThunk(
+  "user/changeMe",
+  async ({ firstName, lastName }, {}) => {
+    try {
+      const response = await authApi.changeMe(firstName, lastName);
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+);
