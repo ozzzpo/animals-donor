@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-
 import Header from "../../components/common/Header/Header";
-import Banner from "../../components/module/Banner/Banner";
-import Important from "../../components/module/Important/Important";
-import Donors from "../../components/module/Donors/Donors";
-import './main.css'
-
+import Banner from "../../components/modules/Banner/Banner";
+import Important from "../../components/modules/Important/Important";
+import Donors from "../../components/modules/Donors/Donors";
+import "./main.css";
+import { useState } from "react";
 
 function Main() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="main">
-      <Header/>
-      <Banner/>
-      <Important/>
-      <Donors/>
+    <div className='main'>
+      <Header isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Banner />
+      <Important />
+      <Donors />
     </div>
   );
 }
