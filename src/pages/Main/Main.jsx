@@ -3,6 +3,7 @@ import Banner from "../../components/modules/Banner/Banner";
 import Important from "../../components/modules/Important/Important";
 import Donors from "../../components/modules/Donors/Donors";
 import Footer from "../../components/module/Footer/Footer";
+import BaseKnow from "../../components/modules/BaseKnow/BaseKnow";
 import "./main.css";
 import { useState } from "react";
 
@@ -13,6 +14,7 @@ function Main() {
       <Banner />
       <Important />
       <Donors />
+      <BaseKnow></BaseKnow>
       <Footer />
     </div>
   );
