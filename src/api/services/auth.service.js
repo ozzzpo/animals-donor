@@ -36,6 +36,13 @@ const authApi = () => {
     getMe: () => {
       return apiClient.get("users/me");
     },
+    changeMe: (firstName, lastName) => {
+      const data = {
+        firstName,
+        lastName,
+      };
+      return apiClient.patch("users/me", qs.stringify(data));
+    },
   };
 };
 export default authApi;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../store/slices/userSlice";
+import { loginUser, registerUser } from "../../store/user/actions";
 
 function Main() {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -42,6 +42,13 @@ function Main() {
         value={registerPw}
         onChange={(e) => setRegisterPw(e.target.value)}
       />
+      <button
+        onClick={() =>
+          dispatch(registerUser({ email: loginEmail, password: loginPw }))
+        }
+      >
+        Register
+      </button>
     </div>
   );
 }
