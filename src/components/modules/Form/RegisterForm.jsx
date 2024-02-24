@@ -18,7 +18,7 @@ function RegisterForm({closeModal, changeView }) {
         password: data.password,
       })
     );
-    //changeView("log in");
+    changeView("log in");
   };
   return (
     <div className='login'>
