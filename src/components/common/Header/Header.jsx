@@ -32,21 +32,22 @@ function Header() {
       <div className='header'>
         <div className='logo'>logo</div>
         <div className='unit'>
-          <a href='#'>Нужны доноры</a>
+          <a className='link' href='#'>Нужны доноры</a>
           <p>|</p>
-          <a href='#'>Топ доноров</a>
+          <a className='link' href='#'>Топ доноров</a>
           <p>|</p>
           <div className='dropdown'>
-            <p className='dropbtn'>Важная информация</p>
+            <p className='dropbtn link'>Важная информация</p>
             <div className='dropdown-content'>
-              <a href='#'>Ссылка 1</a>
-              <a href='#'>Ссылка 2</a>
-              <a href='#'>Ссылка 3</a>
+              <a className='link' href='#'>Для Донора</a>
+              <a className='link' href='#'>Для Реципиента</a>
+              <a className='link' href='#'>Уход за питомцем и подготовка</a>
             </div>
           </div>
         </div>
         <div className='logIn'>
           <button
+            className='link'
             onClick={() => {
               setModalState(() => ({
                 isOpen: true,
@@ -58,6 +59,7 @@ function Header() {
           </button>
           <p>/</p>
           <button
+          className='link'
             onClick={() => {
               setModalState(() => ({
                 isOpen: true,

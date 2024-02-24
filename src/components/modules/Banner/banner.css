@@ -53,6 +53,7 @@
     align-items: center;
 }
 .ban_btn button{
+    cursor: pointer;
     color: white;
     font-family: 'TTT';
     font-weight: bold;
@@ -61,6 +62,9 @@
     background-color: #678CD3;
     border: 0px;
     padding: 20px 35px;
+}
+.ban_btn button:hover{
+    color: #ddd;
 }
 .ban_img :nth-child(1){
     width: 50%;
