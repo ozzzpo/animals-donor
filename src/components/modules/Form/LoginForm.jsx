@@ -10,9 +10,7 @@ function LoginForm({ closeModal }) {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const status = useSelector((state) => state.user.status);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const OnSubmit = (data) => {
     dispatch(
       loginUser({
@@ -28,14 +26,14 @@ function LoginForm({ closeModal }) {
         <img src='./slider.png' alt='' />
         <h1>Войдите в Donor Search</h1>
       </div>
-      <form className='log_form' action=''>
+      <form className='log_form' onSubmit={handleSubmit(OnSubmit)}>
         <div className='log_inp'>
           <label>Имя пользователя или адрес электронной почты</label>
-          <input type='text' />
+          <input type='text' {...register("login")} />
         </div>
         <div className='log_inp'>
           <label>Пароль</label>
-          <input type='password' />
+          <input type='password' {...register("password")} />
         </div>
         <div className='log_btn'>
           <button type='submit'>Войти</button>
