@@ -1,5 +1,5 @@
 import apiClient from "../instance";
-const RequestsApi = () => {
+const searchCardsApi = () => {
   return {
     getRequests: () => {},
     getRequestById: () => {},

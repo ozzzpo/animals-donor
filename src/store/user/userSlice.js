@@ -3,7 +3,7 @@ import { loginUser, registerUser, changeMe } from "./actions";
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    user: {
+    user: localStorage.getItem("user") || {
       first_name: "",
       second_name: "",
       patronymic: "",
@@ -17,7 +17,7 @@ const userSlice = createSlice({
       created_at: "",
       is_email_confirm: false,
     },
-    isAuth: false,
+    isAuth: localStorage.getItem("user").length !== 0 || false,
     status: "ready",
     error: null,
   },
