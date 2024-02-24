@@ -1,0 +1,22 @@
+.links_rec{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    gap: 20px;
+    a{
+        font-size: 20px;
+        font-family: 'TTT';
+        font-weight: 500;
+        color: #F1F7FF;
+        background-color: #678CD3;
+        border: 2px solid#678CD3;
+        padding: 20px 0;
+        border-radius: 16px;
+        text-align: center;
+    }
+    a:hover{
+        color: #678CD3;
+        background-color: #F1F7FF;
+    }
+}

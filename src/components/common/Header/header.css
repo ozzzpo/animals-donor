@@ -71,6 +71,7 @@ p {
 }
 .link {
   position: relative;
+  background-color: #f1f7ff;
 }
 .link::after {
   position: absolute;

@@ -62,15 +62,15 @@ function Header() {
           <div className='dropdown'>
             <p className='dropbtn link'>Важная информация</p>
             <div className='dropdown-content'>
-              <a className='link' href='#'>
+              <Link className='link' to='/donor'>
                 Для Донора
-              </a>
-              <a className='link' href='#'>
+              </Link>
+              <Link className='link' to='/recipient'>
                 Для Реципиента
-              </a>
-              <a className='link' href='#'>
+              </Link>
+              <Link className='link' to='/help'>
                 Уход за питомцем и подготовка
-              </a>
+              </Link>
             </div>
           </div>
         </div>
