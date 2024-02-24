@@ -1,8 +1,10 @@
 .profile-card {
   background-color: #a0c1ff;
+  border-radius: 16px;
   width: 30%;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   padding: 20px 20px;
   &__avatar img {
@@ -13,7 +15,50 @@
   }
   &__info {
     background-color: #f1f7ff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
     width: 100%;
     border-radius: 16px;
+    gap: 20px;
+  }
+  &__name{
+    font-size: 20px;
+    font-family: 'TTT';
+    font-weight: 500;
+  }
+  &__location{
+    font-size: 16px;
+    font-family: 'TTT';
+    font-weight: 500;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  &__phone{
+    color: #678CD3;
+    font-size: 14px;
+    font-family: 'TTT';
+    font-weight: 100;
+    background-color: #D9E6FF;
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+  &__links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+  }
+  &__settings{
+    font-size: 12px;
+    font-family: 'TTT';
+    font-weight: 500;
+    color: #678CD3;
+    text-decoration: underline;
+  }
+  &__settings:hover{
+    color: #a0c1ff;
   }
 }
