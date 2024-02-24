@@ -4,6 +4,7 @@ import ProfileCard from "../../components/modules/ProfileCard/ProfileCard";
 import PetsCard from "../../components/modules/PetsCard/PetsCard";
 import NotificationsCard from "../../components/modules/NotificationsCard/NotificationsCard";
 import RequestCard from "../../components/common/RequestCard/RequestCard";
+import Footer from "../../components/modules/Footer/Footer";
 import './Dashboard.scss'
 
 function Dashboard() {
@@ -17,8 +18,11 @@ function Dashboard() {
       </div>
       <div className='dashboard__requests'>
         <h2>Мои запросы на донорство</h2>
-        <RequestCard />
+        <div className="req_cards">
+          <RequestCard />
+        </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
