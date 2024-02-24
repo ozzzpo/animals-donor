@@ -6,7 +6,9 @@ import NotFound from "../pages/NotFound/NotFound";
 import Profile from "../pages/Profile/Profile";
 import Settings from "../pages/Settings/Settings";
 import ProtectedRoute from "./ProtectedRoute";
-
+import DonorInfo from "../pages/DonorInfo/DonorInfo";
+import HelpPet from "../pages/HelpPet/HelpPet";
+import RecipientInfo from "../pages/RecipientInfo/RecipientInfo";
 
 export const routes = [
   {
@@ -20,6 +22,18 @@ export const routes = [
         <Dashboard />
       </ProtectedRoute>
     ),
+  },
+  {
+    path: "/donor",
+    element: <DonorInfo/>,
+  },
+  {
+    path: "/help",
+    element: <HelpPet/>
+  },
+  {
+    path: "/recipient",
+    element: <RecipientInfo/>
   },
   {
     path: "/settings",
