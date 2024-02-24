@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import defaultImage from "../../../assets/images/1392554736_2135986208.jpg";
 import "./ProfileCard.scss";
 function ProfileCard() {
-  const user = JSON.parse(useSelector((state) => state.user.user));
+  const stringifiedUser = useSelector((state) => state.user.user);
+  const user = JSON.parse(JSON.stringify(stringifiedUser));
   console.log(user);
   return (
     <div className='profile-card'>

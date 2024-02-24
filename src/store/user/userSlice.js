@@ -17,12 +17,31 @@ const userSlice = createSlice({
       created_at: "",
       is_email_confirm: false,
     },
-    isAuth: localStorage.getItem("user").length !== 0 || false,
+    isAuth: localStorage?.getItem("user")?.length !== 0 || false,
     status: "ready",
     error: null,
   },
   reducers: {
-    logout() {},
+    logout(state) {
+      state.user = {
+        first_name: "",
+        second_name: "",
+        patronymic: "",
+        phone: "",
+        city: "",
+        is_email_public: true,
+        id: 0,
+        email: "",
+        is_active: true,
+        avatar: "",
+        created_at: "",
+        is_email_confirm: false,
+      };
+      state.isAuth = false;
+      state.error = null;
+      localStorage.removeItem("user");
+      localStorage.removeItem("authToken");
+    },
   },
   extraReducers: (builder) => {
     builder

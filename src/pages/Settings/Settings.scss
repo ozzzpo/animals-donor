@@ -1,0 +1,72 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  &__content {
+    padding: 60px 40px;
+    display: flex;
+    gap: 60px;
+  }
+  &__photo {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    img {
+      width: 400px;
+      height: 300px;
+      border: 2px solid #678cd3;
+      border-radius: 23px;
+    }
+  }
+  &__upload {
+    background-color: transparent;
+    border: 2px solid #678cd3;
+    border-radius: 16px;
+    padding: 10px 40px;
+    color: #678cd3;
+    font-size: 20px;
+  }
+  &__input-with_checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__form {
+    width: 70%;
+    input {
+      font-size: 20px;
+      font-weight: 500;
+      width: 100%;
+      padding: 10px 20px;
+      border: 2px solid #678cd3;
+      border-radius: 16px;
+      color: #000000bb;
+      outline: none;
+    }
+    input::placeholder {
+      color: #00000089;
+      opacity: 1;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    button {
+      background-color: #678cd3;
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      border-radius: 16px;
+      padding: 15px 40px;
+    }
+  }
+}
+.react-toggle--focus .react-toggle-thumb {
+  box-shadow: none !important;
+}
+.react-toggle-track {
+  background-color: #678cd3 !important;
+}
+.react-toggle-thumb {
+  box-shadow: none !important;
+}
