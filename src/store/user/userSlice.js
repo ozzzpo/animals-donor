@@ -17,7 +17,7 @@ const userSlice = createSlice({
       created_at: "",
       is_email_confirm: false,
     },
-    isAuth: localStorage?.getItem("user")?.length !== 0 || false,
+    isAuth: localStorage.getItem("authToken") || false,
     status: "ready",
     error: null,
   },
@@ -64,21 +64,17 @@ const userSlice = createSlice({
       })
       .addCase(registerUser.pending, (state) => {
         state.status = "loading";
-        console.log("pending");
       })
       .addCase(registerUser.fulfilled, (state) => {
         state.status = "ready";
-        console.log("full");
       })
       .addCase(registerUser.rejected, (state) => {
         state.status = "rejected";
-        console.log("reject");
-        state.error = "Что-то пошло не так";
       })
       .addCase(changeMe.fulfilled, (state, action) => {
         state.user = { ...state.user, ...action.payload };
         localStorage.removeItem("user");
-        localStorage.setItem("user", JSON.stringify(state.user));
+        localStorage.setItem("user", state.user);
       });
   },
 });

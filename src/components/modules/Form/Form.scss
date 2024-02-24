@@ -1,131 +1,141 @@
-.login{
-    width: 80%;
+.login {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.log_head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  img {
+    width: 24px !important;
+    height: 24px;
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 22px;
+    font-family: "TTT";
+    font-weight: 500;
+  }
+}
+.log_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.log_inp {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  input {
+    width: 100%;
+    font-size: 14px;
+    font-family: "TTT";
+    border-radius: 32px;
+    border: 2px solid rgba(33, 37, 40, 0.25);
+    padding: 10px;
+    outline-color: #678cd3;
+  }
+  label {
+    font-size: 14px;
+    font-family: "TTT";
+  }
+  &--err {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 5px;
+  }
 }
-.log_head{
+.log_btn {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  button {
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 32px;
+    border: 0px;
+    background-color: #678cd3;
+    color: white;
+    font-size: 16px;
+    font-family: "TTT";
+    font-weight: 500;
+    cursor: pointer;
+  }
+  button:hover {
+    color: #ddd;
+  }
+}
+.log_down {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .log_down_head {
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 20px;
-    img{
-        width: 24px !important;
-        height: 24px;
-        cursor: pointer;
+    justify-content: space-around;
+    p {
+      font-size: 14px;
+      text-align: center;
+      font-family: "TTT";
+      font-weight: 500;
+      width: 40%;
+      color: rgba(33, 37, 40, 0.5);
     }
-    h1{
-        font-size: 22px;
-        font-family: 'TTT';
-        font-weight: 500;
+    .log_line {
+      width: 29%;
+      height: 1px;
+      background-color: rgba(33, 37, 40, 0.5);
     }
-}
-.log_form{
+  }
+  .log_down_soc {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+    button {
+      background-color: white;
+      border: 1px solid rgba(33, 37, 40, 0.25);
+      border-radius: 64px;
+      padding: 10px 47px;
+      cursor: pointer;
+
+      img {
+        width: 37px;
+        height: 37px;
+      }
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+  }
 }
-.log_inp{
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    input{
-        width: 100%;
-        font-size: 14px;
-        font-family: 'TTT';
-        border-radius: 32px;
-        border: 2px solid rgba(33, 37, 40, 0.25);
-        padding: 10px;
-        outline-color: #678CD3 ;
-    }
-    label{
-        font-size: 14px;
-        font-family: 'TTT';
-    }
+.log_down_reg {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  p {
+    font-size: 14px;
+    font-family: "TTT";
+    color: rgba(33, 37, 40, 0.5);
+  }
+  a {
+    font-size: 14px;
+    font-family: "TTT";
+    color: rgba(33, 37, 40, 0.5);
+    text-decoration: underline;
+  }
+  a:hover {
+    color: black;
+  }
 }
-.log_btn{
-    width: 95%;
-    display: flex;
-    justify-content: center;
-    button{
-        width: 100%;
-        padding: 15px 0;
-        border-radius: 32px;
-        border: 0px;
-        background-color: #678CD3;
-        color: white;
-        font-size: 16px;
-        font-family: 'TTT';
-        font-weight: 500;
-        cursor: pointer;
-    }
-    button:hover{
-        color: #ddd;
-    }
-}
-.log_down{
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    .log_down_head{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        p{
-            font-size: 14px;
-            text-align: center;
-            font-family: 'TTT';
-            font-weight: 500;
-            width: 40%;
-            color: rgba(33, 37, 40, 0.5);
-        }
-        .log_line{
-            width: 29%;
-            height: 1px;
-            background-color: rgba(33, 37, 40, 0.5);
-        }
-    }
-    .log_down_soc{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        button{
-            background-color: white;
-            border: 1px solid rgba(33, 37, 40, 0.25);
-            border-radius: 64px;
-            padding: 10px 47px;
-            cursor: pointer;
-            
-            img{
-                width: 37px;
-                height: 37px;
-            }
-        }
-        button:hover{
-            background-color: #ddd;
-        }
-    }
-    
-}
-.log_down_reg{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    p{
-        font-size: 14px;
-        font-family: 'TTT';
-        color: rgba(33, 37, 40, 0.5);
-    }
-    a{
-        font-size: 14px;
-        font-family: 'TTT';
-        color: rgba(33, 37, 40, 0.5);
-        text-decoration: underline;
-    }
-    a:hover{
-        color: black;
-    }
+.error-log {
+  color: red;
+  font-size: 13px;
 }

@@ -1,24 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../../store/user/actions";
 import "./Form.scss";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { registerSchema } from "./validationSchema";
 
 function RegisterForm({ closeModal, changeView }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(registerSchema) });
   const dispatch = useDispatch();
-  const OnSubmit = (data) => {
+  const [error, setError] = useState("");
+  const onSubmit = (data) => {
     dispatch(
       registerUser({
         email: data.email,
         password: data.password,
       })
-    );
-    changeView("log in");
+    ).then((data) => {
+      if (data?.error) setError("Такая почта уже зарегистрирована!");
+    });
   };
   return (
     <div className='login'>
@@ -26,20 +30,28 @@ function RegisterForm({ closeModal, changeView }) {
         <img src='./slider.png' alt='' onClick={() => closeModal()} />
         <h1>Зарегистрируйтесь в Donor Search</h1>
       </div>
-      <form className='log_form' onSubmit={handleSubmit(OnSubmit)}>
+      <form className='log_form' onSubmit={handleSubmit(onSubmit)}>
         <div className='log_inp'>
           <label>Адрес электронной почты</label>
-          <input type='text' {...register("email")} />
+          <input {...register("email")} />
+          <p className='error-log'>{errors.email?.message}</p>
         </div>
         <div className='log_inp'>
           <label>Пароль</label>
-          <input type='password' {...register("password")} />
+          <div className='log_inp--err'>
+            <input type='password' {...register("password")} />
+            <p className='error-log'>{errors.password?.message}</p>
+          </div>
         </div>
         <div className='log_inp'>
           <label>Повторите пароль</label>
-          <input type='password' {...register("password-repeat")} />
+          <div className='log_inp--err'>
+            <input type='password' {...register("password-repeat")} />
+            <p className='error-log'>{errors["password-repeat"]?.message}</p>
+          </div>
         </div>
         <div className='log_btn'>
+          <p className='error-log'>{error}</p>
           <button type='submit'>Зарегистрироваться</button>
         </div>
         <div className='log_down_reg'>

@@ -9,6 +9,7 @@ export const loginUser = createAsyncThunk(
 
       localStorage.setItem("authToken", response.data.access_token);
       const me = await authApi().getMe();
+
       localStorage.setItem("user", JSON.stringify(me.data));
       return { ...me.data, ...response.data };
     } catch (error) {
@@ -18,12 +19,12 @@ export const loginUser = createAsyncThunk(
 );
 export const registerUser = createAsyncThunk(
   "user/registerUser",
-  async ({ email, password }, {}) => {
+  async ({ email, password }, { rejectWithValue }) => {
     try {
       const response = await authApi().registerUser(email, password);
       return response.data;
     } catch (error) {
-      return console.log(error);
+      return rejectWithValue(error.response.data);
     }
   }
 );

@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../../store/user/actions";
 import "./Form.scss";
-function LoginForm({closeModal, changeView }) {
+import { yupResolver } from "@hookform/resolvers/yup";
+import { loginSchema } from "./validationSchema";
+function LoginForm({ closeModal, changeView }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(loginSchema) });
   const dispatch = useDispatch();
+  const [error, setError] = useState("");
   const OnSubmit = (data) => {
     dispatch(
       loginUser({
         login: data.login,
         password: data.password,
       })
-    );
+    ).then((data) => {
+      console.log(data);
+      if (data?.error) {
+        setError("Неверный логин или пароль!");
+      }
+    });
   };
 
   return (
@@ -29,13 +37,20 @@ function LoginForm({closeModal, changeView }) {
       <form className='log_form' onSubmit={handleSubmit(OnSubmit)}>
         <div className='log_inp'>
           <label>Имя пользователя или адрес электронной почты</label>
-          <input type='text' {...register("login")} />
+          <div className='log_inp--err'>
+            <input {...register("login")} />
+            <p className='error-log'>{errors.login?.message}</p>
+          </div>
         </div>
         <div className='log_inp'>
           <label>Пароль</label>
-          <input type='password' {...register("password")} />
+          <div className='log_inp--err'>
+            <input type='password' {...register("password")} />
+            <p className='error-log'>{errors.password?.message}</p>
+          </div>
         </div>
         <div className='log_btn'>
+          <p className='error-log'>{error}</p>
           <button type='submit'>Войти</button>
         </div>
       </form>
