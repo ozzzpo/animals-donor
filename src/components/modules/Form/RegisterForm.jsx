@@ -2,8 +2,9 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../../store/user/actions";
+import './Form.scss'
 
-function RegisterForm({ changeView }) {
+function RegisterForm({closeModal, changeView }) {
   const {
     register,
     handleSubmit,
@@ -20,15 +21,35 @@ function RegisterForm({ changeView }) {
     //changeView("log in");
   };
   return (
-    <form onSubmit={handleSubmit(OnSubmit)}>
-      <label>ПОЩТА</label>
-      <input type='text' {...register("email")} />
-      <label>Парол</label>
-      <input type='text' {...register("password")} />
-      <label>Парол повторит</label>
-      <input type='text' {...register("password-repeat")} />
-      <button type='submit'>Submit</button>
+    <div className='login'>
+      <div className='log_head'>
+        <img src='./slider.png' alt='' onClick={() => closeModal()} />
+        <h1>Зарегистрируйтесь в Donor Search</h1>
+      </div>
+    <form className='log_form' onSubmit={handleSubmit(OnSubmit)}>
+      <div className='log_inp'>
+        <label>Адрес электронной почты</label>
+        <input type='text' {...register("email")} />
+      </div>
+      <div className='log_inp'>
+        <label>Пароль</label>
+        <input type='password' {...register("password")} />
+      </div>
+      <div className='log_inp'>
+        <label>Повторите пароль</label>
+        <input type='password' {...register("password-repeat")} />
+      </div>
+      <div className='log_btn'>
+        <button type='submit'>Зарегистрироваться</button>
+      </div>
+      <div className='log_down_reg'>
+          <p>Уже есть аккаунт?</p>
+          <a href='#' onClick={() => changeView("log in")}>
+            Войти
+          </a>
+        </div>
     </form>
+    </div>
   );
 }
 
