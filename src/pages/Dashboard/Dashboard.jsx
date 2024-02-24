@@ -17,7 +17,7 @@ function Dashboard() {
           <Header />
           <div className='dashboard__main'>
             <ProfileCard />
-            <NotificationsCard />
+            {/* <NotificationsCard /> */}
             <PetsCard />
           </div>
           <div className='dashboard__requests'>

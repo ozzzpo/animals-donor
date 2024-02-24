@@ -10,11 +10,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 function Main() {
-  const isAuth = useSelector((state) => state.user.isAuth);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (isAuth) navigate("dashboard", { replace: true });
-  }, [navigate, isAuth]);
   return (
     <div className='main'>
       <Header />

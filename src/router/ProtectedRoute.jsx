@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 export default function ProtectedRoute({ children }) {
   const isAuth = useSelector((state) => state.user.isAuth);
-  console.log(isAuth);
   const navigate = useNavigate();
   useEffect(() => {
     if (!isAuth) {

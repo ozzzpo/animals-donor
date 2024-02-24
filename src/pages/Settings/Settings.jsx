@@ -8,7 +8,7 @@ import Toggle from "react-toggle";
 import "react-toggle/style.css";
 import { useForm } from "react-hook-form";
 import { changeMe } from "../../store/user/actions";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Settings() {
   const stringifiedUser = useSelector((state) => state.user.user);
@@ -19,16 +19,18 @@ function Settings() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
   const onSubmit = (data) => {
     const newMe = {
       second_name: data?.secondName ? data.secondName : user?.secondName,
       first_name: data?.firstName ? data.firstName : user?.firstName,
+      patronymic: data?.thirdName ? data.thirdName : user?.thirdName,
       city: data?.city ? data.city : user?.city,
       phone: data?.phone ? data.phone : user?.phone,
       email: data?.email ? data.email : user?.email,
     };
     dispatch(changeMe(newMe));
-    console.log(newMe);
+    navigate("/dashboard");
   };
   return (
     <div className='settings'>
@@ -37,7 +39,9 @@ function Settings() {
         <div className='settings__photo'>
           <img src={user?.avatar ? user.avatar : defaultImage} alt='' />
           <button className='settings__upload'>Добавить фото</button>
-          <Link to='/dashboard' className="settings__upload">Назад</Link>
+          <Link to='/dashboard' className='settings__upload'>
+            Назад
+          </Link>
         </div>
         <div className='settings__form'>
           <form onSubmit={handleSubmit(onSubmit)}>

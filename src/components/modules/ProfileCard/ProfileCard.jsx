@@ -5,6 +5,8 @@ import defaultImage from "../../../assets/images/1392554736_2135986208.jpg";
 import "./ProfileCard.scss";
 function ProfileCard() {
   let user = useSelector((state) => state.user.user);
+  console.log(user);
+
   if (typeof user === "string") {
     user = JSON.parse(user);
   }
@@ -19,11 +21,12 @@ function ProfileCard() {
       <div className='profile-card__info'>
         <p className='profile-card__name'>
           {user?.first_name
-            ? `${user.first_name} ${user?.second_name}`
+            ? `${user?.second_name} ${user.first_name} ${user?.patronymic}`
             : "Ваше имя"}
         </p>
         <p className='profile-card__location'>
-          <img src="./gps.svg" alt="" />{user?.city ? user.city : "Ваш город"}
+          <img src='./gps.svg' alt='' />
+          {user?.city ? user.city : "Ваш город"}
         </p>
         <p className='profile-card__phone'>
           {user?.phone ? user.phone : "Ваш телефон"}

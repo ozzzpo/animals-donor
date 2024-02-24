@@ -74,7 +74,7 @@ const userSlice = createSlice({
       .addCase(changeMe.fulfilled, (state, action) => {
         state.user = { ...state.user, ...action.payload };
         localStorage.removeItem("user");
-        localStorage.setItem("user", state.user);
+        localStorage.setItem("user", JSON.stringify(state.user));
       });
   },
 });
