@@ -20,7 +20,7 @@ function Modal({ modalState, closeModal, customStyles, changeView }) {
             <LoginForm closeModal={closeModal} changeView={changeView} />
           )}
           {view === "register-1" && <></>}
-          {view === "register-2" && <RegisterForm changeView={changeView} />}
+          {view === "register-2" && <RegisterForm closeModal={closeModal} changeView={changeView} />}
         </div>
       </div>
     </ReactModal>

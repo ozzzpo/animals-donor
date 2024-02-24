@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../../store/user/actions";
 import "./Form.scss";
-function LoginForm({ changeView }) {
+function LoginForm({closeModal, changeView }) {
   const {
     register,
     handleSubmit,
@@ -23,7 +23,7 @@ function LoginForm({ changeView }) {
   return (
     <div className='login'>
       <div className='log_head'>
-        <img src='./slider.png' alt='' />
+        <img src='./slider.png' alt='' onClick={() => closeModal()} />
         <h1>Войдите в Donor Search</h1>
       </div>
       <form className='log_form' onSubmit={handleSubmit(OnSubmit)}>
