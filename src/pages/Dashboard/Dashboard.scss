@@ -8,6 +8,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px 0;
+}
+.dashboard__main{
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
 }
 .dashboard__requests h2{
   padding: 60px;
@@ -22,5 +28,5 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  
+
 }

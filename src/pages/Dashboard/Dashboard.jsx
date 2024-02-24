@@ -13,8 +13,8 @@ function Dashboard() {
       <Header />
       <div className='dashboard__main'>
         <ProfileCard />
-        <PetsCard />
         <NotificationsCard />
+        <PetsCard />
       </div>
       <div className='dashboard__requests'>
         <h2>Мои запросы на донорство</h2>
