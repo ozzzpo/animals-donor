@@ -3,6 +3,10 @@ import Modal from "../../modules/Modal/Modal";
 import "./header.css";
 const customStyles = {
   content: {
+    padding: 0,
+    margin: 0,
+    width: "1000px",
+    height: "500px",
     top: "50%",
     left: "50%",
     right: "auto",
@@ -46,7 +50,7 @@ function Header() {
             onClick={() => {
               setModalState(() => ({
                 isOpen: true,
-                view: "login",
+                view: "log in",
               }));
             }}
           >

@@ -1,7 +1,9 @@
 import React from "react";
 import ReactModal from "react-modal";
 import dog from "../../../assets/images/dog image.png";
-
+import LoginForm from "../Form/LoginForm";
+import RegisterForm from "../Form/RegisterForm";
+import "./Modal.scss";
 function Modal({ modalState, closeModal, customStyles }) {
   const { view, isOpen } = modalState;
   return (
@@ -10,12 +12,12 @@ function Modal({ modalState, closeModal, customStyles }) {
       onRequestClose={closeModal}
       style={customStyles}
     >
-      <div>
+      <div className='modal'>
         <img src={dog} alt='dog image' />
         <div className='modal__form'>
-          {view === "log in" && <></>}
+          {view === "log in" && <LoginForm />}
           {view === "register-1" && <></>}
-          {view === "register-2" && <></>}
+          {view === "register-2" && <RegisterForm />}
         </div>
       </div>
     </ReactModal>
