@@ -7,6 +7,7 @@ import defaultAvatar from "../../../assets/images/1392554736_2135986208.jpg";
 import exit from "../../../assets/icons/exit.png";
 import { Link } from "react-router-dom";
 import { logout } from "../../../store/user/userSlice";
+import { useLocation } from 'react-router-dom';
 const customStyles = {
   content: {
     padding: 0,
@@ -22,6 +23,7 @@ const customStyles = {
   },
 };
 function Header() {
+  const location = useLocation();
   const [modalState, setModalState] = useState({
     isOpen: false,
     view: "",
@@ -51,10 +53,12 @@ function Header() {
           </Link>
         </div>
         <div className='unit'>
-          <a className='link' href='#'>
+          {location.pathname == '/' && <>
+          <a className='link' href="#don">
             Нужны доноры
           </a>
           <p>|</p>
+          </>}
           <a className='link' href='#'>
             Топ доноров
           </a>

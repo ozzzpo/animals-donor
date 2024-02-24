@@ -41,6 +41,7 @@
     height: 216px;
     border-radius: 16px;
     background-color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

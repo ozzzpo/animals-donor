@@ -9,12 +9,13 @@ function PetsCard() {
     <div className='pets_card'>
       <h2>Мои питомцы</h2>
       <div className='pets_card__content'>
+        <div className="pet_blur1"></div>
         <div className='pets_cards'>
           {pets?.map((pet) => (
             <PetCard pet={pet} key={pet.id} />
           ))}
         </div>
-        <div className="pet_blur"></div>
+        <div className="pet_blur2"></div>
         <div className='add_pets'>
           <Link to='/add_pet'>
             <img src='./add_pets.svg' alt='' />
