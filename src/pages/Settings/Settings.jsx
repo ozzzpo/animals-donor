@@ -8,6 +8,7 @@ import Toggle from "react-toggle";
 import "react-toggle/style.css";
 import { useForm } from "react-hook-form";
 import { changeMe } from "../../store/user/actions";
+import { Link } from "react-router-dom";
 
 function Settings() {
   const stringifiedUser = useSelector((state) => state.user.user);
@@ -36,6 +37,7 @@ function Settings() {
         <div className='settings__photo'>
           <img src={user?.avatar ? user.avatar : defaultImage} alt='' />
           <button className='settings__upload'>Добавить фото</button>
+          <Link to='/dashboard' className="settings__upload">Назад</Link>
         </div>
         <div className='settings__form'>
           <form onSubmit={handleSubmit(onSubmit)}>

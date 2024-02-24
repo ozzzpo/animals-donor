@@ -46,7 +46,7 @@ function Header() {
     <>
       <div className='header'>
         <div className='logo'>
-          <Link to='/dashboard'>
+          <Link to='/'>
             <img src={logo} alt='' />
           </Link>
         </div>
@@ -76,10 +76,13 @@ function Header() {
         </div>
         {isAuth ? (
           <div className='header__avatar'>
-            <Link to='/settings'>
+            <Link to='/dashboard'>
               <img src={user?.avatar ? user.avatar : defaultAvatar} alt='' />
             </Link>
-            <img src={exit} alt='' onClick={() => dispatch(logout())} />
+            <div className="exit" onClick={() => dispatch(logout())}>
+              <p>Выход</p>
+              <img src={exit} alt=''  />
+            </div>
           </div>
         ) : (
           <div className='logIn'>

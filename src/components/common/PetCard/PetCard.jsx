@@ -1,4 +1,5 @@
 import './PetCard.scss'
+import { Link } from 'react-router-dom';
 function PetCard() {
     return (  
         <div className="pet_card">
@@ -14,7 +15,7 @@ function PetCard() {
                 </div>
                 <div className="pet_btn">
                     <button>Информация о прививках</button>
-                    <a href="#">Изменить данные</a>
+                    <Link to='/change_pet'>Изменить данные</Link>
                 </div>
             </div>
         </div>

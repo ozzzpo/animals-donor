@@ -10,7 +10,7 @@
 .header__avatar {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 20px;
 }
 .header__avatar img:last-child {
   width: 15px;
@@ -18,9 +18,23 @@
   cursor: pointer;
 }
 .header__avatar img:first-child {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+}
+.header__avatar img:first-child:hover{
+  transform: scale(1.05);
+}
+.exit{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+.exit:hover{
+  cursor: pointer;
+  transform: scale(1.05);
 }
 .unit {
   width: 40%;

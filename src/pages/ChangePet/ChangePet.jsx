@@ -2,9 +2,9 @@ import React from "react";
 import Header from "../../components/common/Header/Header";
 import Footer from "../../components/modules/Footer/Footer";
 import { Link } from "react-router-dom";
-import './AddPet.scss'
-function AddPet() {
-  return <div>
+import '../AddPet/AddPet'
+function ChangePet() {
+    return <div>
     <Header/>
     <div className="add_pet">
       <div className="pet_photo">
@@ -28,4 +28,4 @@ function AddPet() {
   </div>;
 }
 
-export default AddPet;
+export default ChangePet;

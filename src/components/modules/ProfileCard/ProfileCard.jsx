@@ -23,15 +23,15 @@ function ProfileCard() {
             : "Ваше имя"}
         </p>
         <p className='profile-card__location'>
-          {user?.city ? user.city : "Ваш город"}
+          <img src="./gps.svg" alt="" />{user?.city ? user.city : "Ваш город"}
         </p>
         <p className='profile-card__phone'>
           {user?.phone ? user.phone : "Ваш телефон"}
         </p>
         <div className='profile-card__links'>
-          <img src='' alt='' />
-          <img src='' alt='' />
-          <img src='' alt='' />
+          <img src='./google.svg' alt='' />
+          <img src='./vk.svg' alt='' />
+          <img src='./tg.svg' alt='' />
         </div>
         <Link to={"/settings"} className='profile-card__settings'>
           Изменить данные

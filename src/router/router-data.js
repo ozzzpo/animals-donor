@@ -1,10 +1,12 @@
 import AddPet from "../pages/AddPet/AddPet";
+import ChangePet from "../pages/ChangePet/ChangePet";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Main from "../pages/Main/Main";
 import NotFound from "../pages/NotFound/NotFound";
 import Profile from "../pages/Profile/Profile";
 import Settings from "../pages/Settings/Settings";
 import ProtectedRoute from "./ProtectedRoute";
+
 
 export const routes = [
   {
@@ -43,7 +45,14 @@ export const routes = [
       </ProtectedRoute>
     ),
   },
-
+  {
+    path: "/change_pet",
+    element: (
+      <ProtectedRoute>
+        <ChangePet />
+      </ProtectedRoute>
+    ),
+  },
   {
     path: "*",
     element: <NotFound />,
