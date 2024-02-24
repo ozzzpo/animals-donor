@@ -1,17 +1,27 @@
 .pets_card {
-  grid-area: "pets";
+  grid-area: pets;
+  display: flex;
+  flex-direction: column;
   background-color: transparent;
   border: 2px solid #a0c1ff;
   border-radius: 16px;
-  display: flex;
   align-items: center;
-  padding: 20px;
-  gap: 50px;
-  .add_pets {
-    width: 50%;
+  padding: 10px 20px;
+  gap: 10px;
+  h2 {
+    font-size: 28px;
+    font-family: "TTT";
+    font-weight: bold;
+    color: #678cd3;
+  }
+  &__content {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+  }
+  .add_pets {
+    padding-left: 20px;
     img {
       cursor: pointer;
       transition: 0.5s;
@@ -21,4 +31,12 @@
       transition: 0.5s;
     }
   }
+}
+.pets_cards {
+  width: 30vw;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }

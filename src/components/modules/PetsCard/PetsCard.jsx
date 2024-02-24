@@ -2,16 +2,24 @@ import React from "react";
 import "./PetsCard.scss";
 import PetCard from "../../common/PetCard/PetCard";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 function PetsCard() {
+  const pets = useSelector((state) => state.pets.pets);
+  console.log(pets);
   return (
     <div className='pets_card'>
-      <div className='pets_cards'>
-        <PetCard></PetCard>
-      </div>
-      <div className='add_pets'>
-        <Link to='/add_pet'>
-          <img src='./add_pets.svg' alt='' />
-        </Link>
+      <h2>Мои питомцы</h2>
+      <div className='pets_card__content'>
+        <div className='pets_cards'>
+          {pets.map((pet) => (
+            <PetCard pet={pet} key={pet.id} />
+          ))}
+        </div>
+        <div className='add_pets'>
+          <Link to='/add_pet'>
+            <img src='./add_pets.svg' alt='' />
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -16,29 +16,30 @@ export const getPetById = createAsyncThunk(
       const response = await petsApi().getPetById(petId);
       return response.data;
     } catch (error) {
-      console.log(error.message);
+      return rejectWithValue(error.response.data);
     }
   }
 );
 export const updatePet = createAsyncThunk(
   "pets/updatePet",
-  async ({ petId }, {}) => {
+  async ({ petId }, { rejectWithValue }) => {
     try {
       const response = await petsApi().updatePet(petId);
       return response.data;
     } catch (error) {
-      console.log(error.message);
+      return rejectWithValue(error.response.data);
     }
   }
 );
 export const addPet = createAsyncThunk(
   "pets/addPet",
-  async ({ newPet }, {}) => {
+  async (newPet, { rejectWithValue }) => {
     try {
+      console.log(newPet);
       const response = await petsApi().addPet(newPet);
       return response.data;
     } catch (error) {
-      console.log(error.message);
+      return rejectWithValue(error.response.data);
     }
   }
 );

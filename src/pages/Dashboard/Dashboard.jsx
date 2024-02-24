@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/common/Header/Header";
 import ProfileCard from "../../components/modules/ProfileCard/ProfileCard";
 import PetsCard from "../../components/modules/PetsCard/PetsCard";
@@ -6,9 +6,14 @@ import NotificationsCard from "../../components/modules/NotificationsCard/Notifi
 import RequestCard from "../../components/common/RequestCard/RequestCard";
 import Footer from "../../components/modules/Footer/Footer";
 import "./Dashboard.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPets } from "../../store/pets/actions";
 
 function Dashboard() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchPets());
+  }, []);
   const status = useSelector((state) => state.user.status);
   return (
     <div className='dashboard'>
@@ -17,8 +22,8 @@ function Dashboard() {
           <Header />
           <div className='dashboard__main'>
             <ProfileCard />
-            {/* <NotificationsCard /> */}
             <PetsCard />
+            <NotificationsCard />
           </div>
           <div className='dashboard__requests'>
             <h2>Мои запросы на донорство</h2>

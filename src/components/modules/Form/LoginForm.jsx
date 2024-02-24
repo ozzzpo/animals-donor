@@ -21,9 +21,10 @@ function LoginForm({ closeModal, changeView }) {
         password: data.password,
       })
     ).then((data) => {
-      console.log(data);
       if (data?.error) {
         setError("Неверный логин или пароль!");
+      } else {
+        closeModal();
       }
     });
   };
