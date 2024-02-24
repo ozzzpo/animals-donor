@@ -5,9 +5,16 @@ import Donors from "../../components/modules/Donors/Donors";
 import Footer from "../../components/modules/Footer/Footer";
 import BaseKnow from "../../components/modules/BaseKnow/BaseKnow";
 import "./main.css";
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Main() {
+  const isAuth = useSelector((state) => state.user.isAuth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (isAuth) navigate("dashboard");
+  }, [navigate, isAuth]);
   return (
     <div className='main'>
       <Header />

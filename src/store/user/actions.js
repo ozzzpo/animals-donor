@@ -3,7 +3,7 @@ import authApi from "../../api/services/auth.service";
 
 export const loginUser = createAsyncThunk(
   "user/loginUser",
-  async ({ login, password }, {}) => {
+  async ({ login, password }, { rejectWithValue }) => {
     try {
       const response = await authApi().loginUser(login, password);
 
@@ -12,7 +12,7 @@ export const loginUser = createAsyncThunk(
       localStorage.setItem("user", JSON.stringify(me.data));
       return { ...me.data, ...response.data };
     } catch (error) {
-      console.error(error);
+      return rejectWithValue(error.response.data);
     }
   }
 );
@@ -21,7 +21,9 @@ export const registerUser = createAsyncThunk(async (email, password) => {
     const response = await authApi.registerUser(email, password);
     console.log(response.data);
     return response.data;
-  } catch (error) {}
+  } catch (error) {
+    return;
+  }
 });
 
 export const getMe = createAsyncThunk("user/getMe", async () => {

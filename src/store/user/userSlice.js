@@ -20,6 +20,7 @@ const userSlice = createSlice({
     isAuth: false,
     status: "ready",
     error: null,
+    to: "",
   },
   reducers: {
     logout() {},
@@ -34,10 +35,13 @@ const userSlice = createSlice({
         state.isAuth = true;
         state.status = "ready";
       })
-      .addCase(loginUser.rejected, (state) => {
+      .addCase(loginUser.rejected, (state, action) => {
         state.user = {};
         state.isAuth = false;
-        state.error = "Неверный логин или пароль";
+        state.error =
+          action.payload && action.payload.detail
+            ? action.payload.detail
+            : "Произошла ошибка при авторизации";
         state.status = "rejected";
       })
       .addCase(registerUser.pending, (state) => {

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "../../modules/Modal/Modal";
 import "./header.css";
+import { useForm } from "react-hook-form";
 const customStyles = {
   content: {
     padding: 0,

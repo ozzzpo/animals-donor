@@ -22,14 +22,14 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   (response) => {
     return response;
-  },
-  (error) => {
-    if (error.response.status === 401) {
-      localStorage.removeItem("authToken");
-      localStorage.removeItem("user");
-      console.log("unauth");
-    }
-    console.log(error.message);
   }
+  // (error) => {
+  //   if (error.response.status === 401) {
+  //     localStorage.removeItem("authToken");
+  //     localStorage.removeItem("user");
+  //     console.log("unauth");
+  //   }
+  //   console.log(error.message);
+  // }
 );
 export default apiClient;
