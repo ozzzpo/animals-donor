@@ -2,6 +2,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Main from "../pages/Main/Main";
 import NotFound from "../pages/NotFound/NotFound";
 import Profile from "../pages/Profile/Profile";
+import Settings from "../pages/Settings/Settings";
 import ProtectedRoute from "./ProtectedRoute";
 
 export const routes = [
@@ -14,6 +15,14 @@ export const routes = [
     element: (
       <ProtectedRoute>
         <Dashboard />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/settings",
+    element: (
+      <ProtectedRoute>
+        <Settings />
       </ProtectedRoute>
     ),
   },

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "../../modules/Modal/Modal";
 import "./header.css";
-import { useForm } from "react-hook-form";
+import logo from "../../../assets/icons/Снимок экрана 2024-02-24 120639.svg";
 const customStyles = {
   content: {
     padding: 0,
@@ -37,7 +37,9 @@ function Header() {
   return (
     <>
       <div className='header'>
-        <div className='logo'>logo</div>
+        <div className='logo'>
+          <img src={logo} alt='' />
+        </div>
         <div className='unit'>
           <a className='link' href='#'>
             Нужны доноры
