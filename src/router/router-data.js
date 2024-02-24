@@ -25,15 +25,15 @@ export const routes = [
   },
   {
     path: "/donor",
-    element: <DonorInfo/>,
+    element: <DonorInfo />,
   },
   {
     path: "/help",
-    element: <HelpPet/>
+    element: <HelpPet />,
   },
   {
     path: "/recipient",
-    element: <RecipientInfo/>
+    element: <RecipientInfo />,
   },
   {
     path: "/settings",
@@ -60,7 +60,7 @@ export const routes = [
     ),
   },
   {
-    path: "/change_pet",
+    path: "/petInfo",
     element: (
       <ProtectedRoute>
         <ChangePet />

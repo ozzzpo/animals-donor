@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/common/Header/Header";
 import Footer from "../../components/modules/Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import "./AddPet.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { addPetSchema } from "./validatonSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { addPet } from "../../store/pets/actions";
+import { addPet, getTypes } from "../../store/pets/actions";
+import Select from "react-select";
+import getOptions from "../../utils/getOptions";
 function AddPet() {
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getTypes());
+  }, [dispatch]);
+  const types = getOptions(useSelector((state) => state.pets.types));
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(addPetSchema) });
   const navigate = useNavigate();
+  const [choosedOption, setChoosedOption] = useState(null);
+  console.log(choosedOption);
   const onSubmit = (data) => {
     dispatch(
       addPet({
@@ -24,7 +32,7 @@ function AddPet() {
         blood_type: data.bloodType,
         birthday: data.birthDate,
         weight: data.weight,
-        pet_type_id: 0,
+        pet_type_id: choosedOption.value,
         role: "donor",
       })
     ).then((data) => {
@@ -50,7 +58,11 @@ function AddPet() {
           </div>
           <form onSubmit={handleSubmit(onSubmit)} className='pet_inp'>
             <div className='pet_inp--err'>
-              <input type='text' placeholder='Тип' {...register("type")} />
+              <Select
+                options={types}
+                onChange={setChoosedOption}
+                defaultValue={choosedOption}
+              />
               <p>{errors.type?.message}</p>
             </div>
             <div className='pet_inp--err'>

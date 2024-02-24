@@ -3,7 +3,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 export const addPetSchema = yup.object().shape({
-  type: yup.string().required("Необходимое поле!"),
   breed: yup.string().required("Необходимое поле!"),
   bloodType: yup.string().required("Необходимое поле!"),
   name: yup.string().required("Необходимое поле!"),

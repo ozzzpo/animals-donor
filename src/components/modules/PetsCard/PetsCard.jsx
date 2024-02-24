@@ -3,6 +3,7 @@ import "./PetsCard.scss";
 import PetCard from "../../common/PetCard/PetCard";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import addPets from "../../../assets/icons/add_pets.svg";
 function PetsCard() {
   const pets = useSelector((state) => state.pets.pets);
   return (
@@ -14,10 +15,10 @@ function PetsCard() {
             <PetCard pet={pet} key={pet.id} />
           ))}
         </div>
-        <div className="pet_blur"></div>
+        <div className='pet_blur'></div>
         <div className='add_pets'>
           <Link to='/add_pet'>
-            <img src='./add_pets.svg' alt='' />
+            <img src={addPets} alt='add pets button' />
           </Link>
         </div>
       </div>

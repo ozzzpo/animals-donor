@@ -13,6 +13,9 @@ const petsApi = () => {
     addPet: (newPet) => {
       return apiClient.post("pets/", newPet);
     },
+    getTypes: () => {
+      return apiClient.get("pet_type/");
+    },
   };
 };
 export default petsApi;
