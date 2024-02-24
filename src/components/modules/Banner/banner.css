@@ -60,11 +60,14 @@
     font-size: 24px;
     border-radius: 16px;
     background-color: #678CD3;
-    border: 0px;
+    border: 2px solid #678CD3;
     padding: 20px 35px;
+    transition: 0.5s;
 }
 .ban_btn button:hover{
-    color: #ddd;
+    color: #678CD3;
+    background-color: #F1F7FF;
+    transition: 0.5s;
 }
 .ban_img :nth-child(1){
     width: 50%;

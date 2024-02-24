@@ -27,10 +27,12 @@
             padding: 20px 30px;
             border-radius: 16px;
             text-align: center;
+            transition: 0.5s;
         }
         a:hover{
             color: #678CD3;
             background-color: #F1F7FF;
+            transition: 0.5s;
         }
     }
     .info{

@@ -58,8 +58,10 @@
     font-weight: 500;
     color: #678cd3;
     text-decoration: underline;
+    transition: 0.5s;
   }
   &__settings:hover {
     color: #a0c1ff;
+    transition: 0.5s;
   }
 }

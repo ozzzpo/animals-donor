@@ -48,11 +48,13 @@
                 font-family: 'TTT';
                 font-weight: 500;
                 cursor: pointer;
+                transition: 0.5s;
             }
             button:hover{
                 background-color: #F1F7FF;
                 color: #678CD3;
                 border: 1px solid #678CD3;
+                transition: 0.5s;
             }
             a{
                 font-size: 12px;
@@ -60,9 +62,11 @@
                 font-weight: 500 ;
                 color: #678CD3;
                 text-decoration: underline;
+                transition: 0.5s;
             }
             a:hover{
-                color: #ddd;
+                color: #a0c1ff;
+                transition: 0.5s;
             }
         }
     }

@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   .pet_photo_btn {
     border-radius: 16px;
     background-color: #f1f7ff;
@@ -38,11 +39,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
+    width: 100%;
   }
   .pet_photo_btn:hover {
     background-color: #678cd3;
     color: #f1f7ff;
     border: 2px solid #678cd3;
+    transition: 0.5s;
+  }
+  img{
+    width: 70%;
   }
 }
 .pet_inp {
@@ -84,11 +91,14 @@
     font-size: 20px;
     font-family: "TTT";
     font-weight: 500;
-    border: 0px;
+    border: 2px solid #678CD3;
     border-radius: 16px;
     cursor: pointer;
+    transition: 0.5s;
   }
   button:hover {
-    color: #ddd;
+    color: #678CD3;
+    background-color: #f1f7ff;
+    transition: 0.5s;
   }
 }
