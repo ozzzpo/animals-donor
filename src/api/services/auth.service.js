@@ -22,14 +22,11 @@ const authApi = () => {
       const data = {
         email,
         password,
-        grant_type: "",
-        scope: "",
-        client_id: "",
-        client_secret: "",
       };
-      return apiClient.post("auth/register", qs.stringify(data), {
+      return apiClient.post("auth/register", data, {
         headers: {
-          "Content-Type": "application/`x-www-form-urlencoded",
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
       });
     },

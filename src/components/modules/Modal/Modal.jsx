@@ -5,14 +5,7 @@ import LoginForm from "../Form/LoginForm";
 import RegisterForm from "../Form/RegisterForm";
 import "./Modal.scss";
 
-function Modal({
-  modalState,
-  closeModal,
-  customStyles,
-  register,
-  handleSubmit,
-  errors,
-}) {
+function Modal({ modalState, closeModal, customStyles, changeView }) {
   const { view, isOpen } = modalState;
   return (
     <ReactModal
@@ -23,15 +16,11 @@ function Modal({
       <div className='modal'>
         <img src={dog} alt='dog image' />
         <div className='modal__form'>
-          {view === "log in" && <LoginForm closeModal={closeModal} />}
-          {view === "register-1" && <></>}
-          {view === "register-2" && (
-            <RegisterForm
-              register={register}
-              handleSubmit={handleSubmit}
-              errors={errors}
-            />
+          {view === "log in" && (
+            <LoginForm closeModal={closeModal} changeView={changeView} />
           )}
+          {view === "register-1" && <></>}
+          {view === "register-2" && <RegisterForm changeView={changeView} />}
         </div>
       </div>
     </ReactModal>

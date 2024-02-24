@@ -13,7 +13,7 @@ function Main() {
   const isAuth = useSelector((state) => state.user.isAuth);
   const navigate = useNavigate();
   useEffect(() => {
-    if (isAuth) navigate("dashboard");
+    if (isAuth) navigate("dashboard", { replace: true });
   }, [navigate, isAuth]);
   return (
     <div className='main'>

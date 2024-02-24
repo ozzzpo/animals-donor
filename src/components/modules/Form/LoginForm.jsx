@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../../store/user/actions";
-
-function LoginForm({ closeModal }) {
+import "./Form.scss";
+function LoginForm({ changeView }) {
   const {
     register,
     handleSubmit,
@@ -58,7 +58,9 @@ function LoginForm({ closeModal }) {
         </div>
         <div className='log_down_reg'>
           <p>Нет учетной записи?</p>
-          <a href='#'>Зарегистрироваться</a>
+          <a href='#' onClick={() => changeView("register-2")}>
+            Зарегистрироваться
+          </a>
         </div>
       </div>
     </div>

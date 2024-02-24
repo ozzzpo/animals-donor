@@ -16,19 +16,21 @@ export const loginUser = createAsyncThunk(
     }
   }
 );
-export const registerUser = createAsyncThunk(async (email, password) => {
-  try {
-    const response = await authApi.registerUser(email, password);
-    console.log(response.data);
-    return response.data;
-  } catch (error) {
-    return;
+export const registerUser = createAsyncThunk(
+  "user/registerUser",
+  async ({ email, password }, {}) => {
+    try {
+      const response = await authApi().registerUser(email, password);
+      return response.data;
+    } catch (error) {
+      return console.log(error);
+    }
   }
-});
+);
 
 export const getMe = createAsyncThunk("user/getMe", async () => {
   try {
-    const response = await authApi.getMe();
+    const response = await authApi().getMe();
     return response.data;
   } catch (error) {
     console.log(error.message);
@@ -39,7 +41,7 @@ export const changeMe = createAsyncThunk(
   "user/changeMe",
   async ({ firstName, lastName }, {}) => {
     try {
-      const response = await authApi.changeMe(firstName, lastName);
+      const response = await authApi().changeMe(firstName, lastName);
       return response.data;
     } catch (error) {
       console.log(error.message);

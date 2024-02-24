@@ -28,21 +28,37 @@ function Header() {
       view: "",
     }));
   };
+  const changeView = (view) => {
+    setModalState((state) => ({
+      ...state,
+      view,
+    }));
+  };
   return (
     <>
       <div className='header'>
         <div className='logo'>logo</div>
         <div className='unit'>
-          <a className='link' href='#'>Нужны доноры</a>
+          <a className='link' href='#'>
+            Нужны доноры
+          </a>
           <p>|</p>
-          <a className='link' href='#'>Топ доноров</a>
+          <a className='link' href='#'>
+            Топ доноров
+          </a>
           <p>|</p>
           <div className='dropdown'>
             <p className='dropbtn link'>Важная информация</p>
             <div className='dropdown-content'>
-              <a className='link' href='#'>Для Донора</a>
-              <a className='link' href='#'>Для Реципиента</a>
-              <a className='link' href='#'>Уход за питомцем и подготовка</a>
+              <a className='link' href='#'>
+                Для Донора
+              </a>
+              <a className='link' href='#'>
+                Для Реципиента
+              </a>
+              <a className='link' href='#'>
+                Уход за питомцем и подготовка
+              </a>
             </div>
           </div>
         </div>
@@ -60,11 +76,11 @@ function Header() {
           </button>
           <p>/</p>
           <button
-          className='link'
+            className='link'
             onClick={() => {
               setModalState(() => ({
                 isOpen: true,
-                view: "register-1",
+                view: "register-2",
               }));
             }}
           >
@@ -76,6 +92,7 @@ function Header() {
       <Modal
         modalState={modalState}
         closeModal={closeModal}
+        changeView={changeView}
         customStyles={customStyles}
       />
     </>

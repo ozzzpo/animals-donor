@@ -20,7 +20,6 @@ const userSlice = createSlice({
     isAuth: false,
     status: "ready",
     error: null,
-    to: "",
   },
   reducers: {
     logout() {},
@@ -46,12 +45,15 @@ const userSlice = createSlice({
       })
       .addCase(registerUser.pending, (state) => {
         state.status = "loading";
+        console.log("pending");
       })
       .addCase(registerUser.fulfilled, (state) => {
         state.status = "ready";
+        console.log("full");
       })
       .addCase(registerUser.rejected, (state) => {
         state.status = "rejected";
+        console.log("reject");
         state.error = "Что-то пошло не так";
       })
       .addCase(changeMe.fulfilled, (state, action) => {
