@@ -1,0 +1,24 @@
+.pets_card{
+    width: 40%;
+    background-color: #A0C1FF;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 50px;
+    .add_pets{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        img:hover{
+            transform: scale(1.05);
+            transition: 0.5s;
+        }
+    }
+    
+}
