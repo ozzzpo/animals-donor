@@ -1,0 +1,81 @@
+.requestCard{
+    width: 90%;
+    height: 324px;
+    display: flex;
+    background-color: #A0C1FF;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 16px;
+}
+.requestCard img{
+    width: 343px;
+    height: 280px;
+    border-radius: 16px;
+}
+.req_info{
+    width: 70%;
+    height: 280px;
+    border-radius: 16px;
+    background-color: #F1F7FF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.bl_type{
+    display: flex;
+    padding: 5px;
+    background-color: #678CD3;
+    width: 40%;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 16px;
+    
+}
+.bl_type p{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'TTT';
+}
+.req_date{
+    background-color: #F1F7FF;
+   padding: 10px;
+   border-radius: 16px;
+}
+.req_date p{
+    color: #678CD3;
+    font-weight: 500;
+    font-family: 'TTT';
+}
+.req_base_info{
+    display: flex;
+    gap: 20px;
+}
+.req_base_info p{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'TTT';
+}
+.req_more_info{
+    display: flex;
+    gap: 20px;
+}
+.req_more_info button{
+    color: #678CD3;
+    border: 2px solid #678CD3;
+    background-color: #F1F7FF;
+    cursor: pointer;
+    width: 25%;
+    height: 50px;
+    border-radius: 16px;
+    font-family: 'TTT';
+    font-size: 18px;
+    font-weight: 550;
+    transition: 0.3s;
+}
+.req_more_info button:hover{
+    background-color: #678CD3;
+    color: white;
+    transition: 0.3s;
+}
