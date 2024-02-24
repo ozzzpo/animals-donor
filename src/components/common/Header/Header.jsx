@@ -46,7 +46,9 @@ function Header() {
     <>
       <div className='header'>
         <div className='logo'>
-          <img src={logo} alt='' />
+          <Link to='/dashboard'>
+            <img src={logo} alt='' />
+          </Link>
         </div>
         <div className='unit'>
           <a className='link' href='#'>

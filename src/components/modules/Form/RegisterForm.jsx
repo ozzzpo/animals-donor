@@ -2,9 +2,9 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../../store/user/actions";
-import './Form.scss'
+import "./Form.scss";
 
-function RegisterForm({closeModal, changeView }) {
+function RegisterForm({ closeModal, changeView }) {
   const {
     register,
     handleSubmit,
@@ -18,7 +18,7 @@ function RegisterForm({closeModal, changeView }) {
         password: data.password,
       })
     );
-    //changeView("log in");
+    changeView("log in");
   };
   return (
     <div className='login'>
@@ -26,29 +26,28 @@ function RegisterForm({closeModal, changeView }) {
         <img src='./slider.png' alt='' onClick={() => closeModal()} />
         <h1>Зарегистрируйтесь в Donor Search</h1>
       </div>
-    <form className='log_form' onSubmit={handleSubmit(OnSubmit)}>
-      <div className='log_inp'>
-        <label>Адрес электронной почты</label>
-        <input type='text' {...register("email")} />
-      </div>
-      <div className='log_inp'>
-        <label>Пароль</label>
-        <input type='password' {...register("password")} />
-      </div>
-      <div className='log_inp'>
-        <label>Повторите пароль</label>
-        <input type='password' {...register("password-repeat")} />
-      </div>
-      <div className='log_btn'>
-        <button type='submit'>Зарегистрироваться</button>
-      </div>
-      <div className='log_down_reg'>
-          <p>Уже есть аккаунт?</p>
-          <a href='#' onClick={() => changeView("log in")}>
-            Войти
-          </a>
+      <form className='log_form' onSubmit={handleSubmit(OnSubmit)}>
+        <div className='log_inp'>
+          <label>Адрес электронной почты</label>
+          <input type='text' {...register("email")} />
         </div>
-    </form>
+        <div className='log_inp'>
+          <label>Пароль</label>
+          <input type='password' {...register("password")} />
+        </div>
+        <div className='log_inp'>
+          <label>Повторите пароль</label>
+          <input type='password' {...register("password-repeat")} />
+        </div>
+        <div className='log_btn'>
+          <button type='submit'>Зарегистрироваться</button>
+        </div>
+        <div className='log_down_reg'>
+          <p onClick={() => changeView("log in")} style={{ cursor: "pointer" }}>
+            Уже есть аккаунт?
+          </p>
+        </div>
+      </form>
     </div>
   );
 }

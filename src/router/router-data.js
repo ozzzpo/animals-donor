@@ -1,3 +1,4 @@
+import AddPet from "../pages/AddPet/AddPet";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Main from "../pages/Main/Main";
 import NotFound from "../pages/NotFound/NotFound";
@@ -31,6 +32,14 @@ export const routes = [
     element: (
       <ProtectedRoute>
         <Profile />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/add_pet",
+    element: (
+      <ProtectedRoute>
+        <AddPet />
       </ProtectedRoute>
     ),
   },

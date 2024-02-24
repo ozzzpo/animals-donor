@@ -30,15 +30,11 @@ const authApi = () => {
         },
       });
     },
+    changeMe: (meInfo) => {
+      return apiClient.patch("users/me", meInfo);
+    },
     getMe: () => {
       return apiClient.get("users/me");
-    },
-    changeMe: (firstName, lastName) => {
-      const data = {
-        firstName,
-        lastName,
-      };
-      return apiClient.patch("users/me", qs.stringify(data));
     },
   };
 };

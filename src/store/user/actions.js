@@ -39,9 +39,10 @@ export const getMe = createAsyncThunk("user/getMe", async () => {
 
 export const changeMe = createAsyncThunk(
   "user/changeMe",
-  async ({ firstName, lastName }, {}) => {
+  async (meInfo, {}) => {
+    console.log(meInfo);
     try {
-      const response = await authApi().changeMe(firstName, lastName);
+      const response = await authApi().changeMe(meInfo);
       return response.data;
     } catch (error) {
       console.log(error.message);

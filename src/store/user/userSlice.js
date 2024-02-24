@@ -76,8 +76,7 @@ const userSlice = createSlice({
         state.error = "Что-то пошло не так";
       })
       .addCase(changeMe.fulfilled, (state, action) => {
-        state.user.first_name = action.payload["firstName"];
-        state.user.second_name = action.payload["lastName"];
+        state.user = { ...state.user, ...action.payload };
         localStorage.removeItem("user");
         localStorage.setItem("user", JSON.stringify(state.user));
       });

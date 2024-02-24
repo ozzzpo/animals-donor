@@ -6,7 +6,7 @@ import "./ProfileCard.scss";
 function ProfileCard() {
   const stringifiedUser = useSelector((state) => state.user.user);
   const user = JSON.parse(JSON.stringify(stringifiedUser));
-  console.log(user);
+
   return (
     <div className='profile-card'>
       <div className='profile-card__avatar'>
