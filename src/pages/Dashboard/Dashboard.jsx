@@ -8,11 +8,13 @@ import Footer from "../../components/modules/Footer/Footer";
 import "./Dashboard.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPets } from "../../store/pets/actions";
+import { fetchSearchCards } from "../../store/searchCards/actions";
 
 function Dashboard() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPets());
+    dispatch(fetchSearchCards());
   }, []);
   const status = useSelector((state) => state.user.status);
   return (

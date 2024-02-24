@@ -37,4 +37,3 @@ const petsSlice = createSlice({
 });
 
 export default petsSlice.reducer;
-export const { logout } = petsSlice.actions;

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 function PetsCard() {
   const pets = useSelector((state) => state.pets.pets);
-  console.log(pets);
   return (
     <div className='pets_card'>
       <h2>Мои питомцы</h2>
