@@ -6,6 +6,10 @@
     width: 100%;
     padding: 20px;
   }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .modal img {
   width: 390px;
