@@ -44,3 +44,12 @@
     font-weight: bold;
     color: #678CD3;
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+    .sub_img{
+        width: 100% !important;
+    }
+    .txt p{
+        width: 95%;
+        top: 25%;
+    }
+}

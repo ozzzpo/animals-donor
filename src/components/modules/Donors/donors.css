@@ -18,3 +18,12 @@
   flex-wrap: wrap;
   gap: 40px;
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+  .donors h1{
+    padding: 20px 0;
+    text-align: center;
+  }
+  .don_cards{
+    gap: 20px;
+  }
+}

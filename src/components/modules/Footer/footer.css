@@ -61,3 +61,12 @@
     font-family: 'TTT';
     color: white;
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+    .footer{
+        padding: 20px;
+        height: 100%;
+        gap: 30px;
+        justify-content: start;
+        flex-direction: column;
+    }
+  }
