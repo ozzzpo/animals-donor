@@ -70,7 +70,17 @@ function ChangePet() {
         </div>
         <div className='change-pet__content'>
           <div className='change-pet__photo'>
-            <img src='./image.png' alt='' />
+          {
+            pet.pet_type.name == 'Кошка' ? 
+            <img src='./cat_skelet.png' alt='' /> : 
+            pet.pet_type.name == 'Собака' ?
+            <img src='./dog_skelet.png' alt='' /> :
+            pet.pet_type.name == 'Грызун' ? 
+            <img src='./grizun_skelet.png' alt='' /> :
+            pet.pet_type.name == 'Птица' ? 
+            <img src='./bird_skelet.png' alt='' /> :
+            <img src='./ekzo_skelet.png' alt='' /> 
+        }
             {isEditMode ? (
               <button className='change-pet__btn'>Добавить фото</button>
             ) : (
@@ -84,8 +94,9 @@ function ChangePet() {
           {isEditMode ? (
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className='change-pet__from'
+              className='change-pet__form'
             >
+                <p className="change-pet__form__p">Оставьте поле пустым, если не хотите изменять его значение!</p>
               <div className='change-pet__input--err'>
                 <input type='text' placeholder='Тип' {...register("type")} />
                 <p>{errors.type?.message}</p>
