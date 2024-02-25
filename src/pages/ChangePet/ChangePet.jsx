@@ -81,11 +81,7 @@ function ChangePet() {
             <img src='./bird_skelet.png' alt='' /> :
             <img src='./ekzo_skelet.png' alt='' /> 
         }
-            {isEditMode ? (
-              <button className='change-pet__btn'>Добавить фото</button>
-            ) : (
-              ""
-            )}
+
             <button className="create_zapros" onClick={() => setIsOpen(true)}>Создать запрос</button>
             <Link style={{ width: "100%" }} to='/dashboard'>
               <button className='change-pet__btn'>Назад</button>

@@ -68,7 +68,6 @@ function DonorRequest() {
             ) : (
               ""
             )}
-            <button className='donor-request__btn'>Откликнуться</button>
             <Link style={{ width: "100%" }} to='/dashboard'>
               <button className='donor-request__btn'>Назад</button>
             </Link>
