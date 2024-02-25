@@ -8,7 +8,7 @@ function NotificationsCard() {
       <div className='notifs'>
         <NotificationCard />
       </div>
-      <p>Больше нет уведомлений</p>
+      <p>Больше нет откликов</p>
     </div>
   );
 }

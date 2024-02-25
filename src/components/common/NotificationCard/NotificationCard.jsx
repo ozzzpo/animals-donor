@@ -2,7 +2,7 @@ import './NotificationCard.scss'
 function NotificationCard() {
     return (  
         <div className="not_card">
-            <img className='not_img' src="./dog image.png" alt="" />
+            <img className='not_img' src="./dog_skelet.png" alt="" />
             <div className="not_info">
                 <h4>Для: Собака</h4>
                 <p>Напоминаем о донации</p>

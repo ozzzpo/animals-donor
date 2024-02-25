@@ -7,7 +7,17 @@ function PetCard({ pet }) {
   const navigate = useNavigate();
   return (
     <div className='pet_card'>
-      <img src='./dog image.png' alt='' />
+      {
+        pet.pet_type.name == 'Кошка' ? 
+        <img src='./cat_skelet.png' alt='' /> : 
+        pet.pet_type.name == 'Собака' ?
+        <img src='./dog_skelet.png' alt='' /> :
+        pet.pet_type.name == 'Грызун' ? 
+        <img src='./grizun_skelet.png' alt='' /> :
+        pet.pet_type.name == 'Птица' ? 
+        <img src='./bird_skelet.png' alt='' /> :
+        <img src='./ekzo_skelet.png' alt='' /> 
+      }
       <div className='pet_info'>
         <div className='pet_txt'>
           <p>{pet.pet_type.name}</p>
