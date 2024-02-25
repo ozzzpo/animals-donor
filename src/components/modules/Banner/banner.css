@@ -52,7 +52,7 @@
     gap: 20px;
     align-items: center;
 }
-.ban_btn button{
+.ban_btn_link{
     cursor: pointer;
     color: white;
     font-family: 'TTT';
@@ -64,7 +64,7 @@
     padding: 20px 35px;
     transition: 0.5s;
 }
-.ban_btn button:hover{
+.ban_btn_link:hover{
     color: #678CD3;
     background-color: #F1F7FF;
     transition: 0.5s;

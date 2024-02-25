@@ -1,0 +1,36 @@
+.don_card{
+    position: relative;
+    button{
+        width: 90%;
+        padding: 10px 0;
+        color: #678CD3;
+        background-color: #F1F7FF;
+        border-radius: 8px;
+        border: 2px solid #678CD3;
+        font-family: 'TTT';
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    button:hover{
+        background-color: #678CD3;
+        color:#F1F7FF;
+        transition: 0.5s;
+    }
+}
+.card_procent{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 2px solid #678CD3;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #F1F7FF;
+    p{
+        color: #678CD3;
+        font-size: 30px;
+        font-family: 'TTT';
+        font-weight: 500;
+    }
+}

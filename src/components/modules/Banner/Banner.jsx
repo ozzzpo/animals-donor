@@ -1,5 +1,6 @@
 import "./banner.css";
 import dog from "../../../assets/images/dog image.svg";
+import { Link } from "react-router-dom";
 function Banner() {
   return (
     <div className='banner'>
@@ -13,12 +14,16 @@ function Banner() {
           </p>
         </div>
         <div className='ban_btn'>
-          <button>Сдать кровь</button>
-          <button>Получить помощь</button>
+          <Link className='ban_btn_link' to='/ankets'>
+            Сдать кровь
+          </Link>
+          <Link className='ban_btn_link' to='/ankets'>
+            Получить помощь
+          </Link>
         </div>
       </div>
       <div className='ban_img'>
-        <img src={dog} alt='' />
+        <img src='./dog image.svg' alt='' />
         <img src='./cat image.svg' alt='' />
       </div>
     </div>
