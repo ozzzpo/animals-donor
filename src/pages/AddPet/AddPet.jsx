@@ -54,7 +54,6 @@ function AddPet() {
         <div className='add_pet__content'>
           <div className='pet_photo'>
             <img src='./skelet.png' alt='' />
-            <button className='pet_photo_btn'>Добавить фото</button>
             <Link className='pet_photo_btn' to='/dashboard'>
               Назад
             </Link>

@@ -37,7 +37,6 @@ function Settings() {
       <div className='settings__content'>
         <div className='settings__photo'>
           <img src={user?.avatar ? user.avatar : defaultImage} alt='' />
-          <button className='settings__upload'>Добавить фото</button>
           <Link to='/dashboard' className='settings__upload'>
             Назад
           </Link>
