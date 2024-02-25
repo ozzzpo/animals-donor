@@ -55,3 +55,27 @@ export const getTypes = createAsyncThunk(
     }
   }
 );
+
+export const matchDonors = createAsyncThunk(
+  "pets/matchDonors",
+  async (searchCardId, { rejectWithValue }) => {
+    try {
+      const response = await petsApi().matchDonors(searchCardId);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+export const matchRecipients = createAsyncThunk(
+  "pets/matchRecipients",
+  async (petId, { rejectWithValue }) => {
+    try {
+      const response = await petsApi().matchRecipients(petId);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);

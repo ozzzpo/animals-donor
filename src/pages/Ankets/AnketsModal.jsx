@@ -3,8 +3,9 @@ import ReactModal from "react-modal";
 import "./AnketsModal.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPets } from "../../store/pets/actions";
+import { fetchSearchCards } from "../../store/searchCards/actions";
 
-function AnketsModal({ isOpen, closeModal, setChoosedPet }) {
+function AnketsModal({ isOpen, closeModal, setChoosedPet, me }) {
   const customStyles = {
     content: {
       padding: 0,
@@ -22,10 +23,15 @@ function AnketsModal({ isOpen, closeModal, setChoosedPet }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPets());
+    dispatch(fetchSearchCards());
   }, [dispatch]);
   const pets = useSelector((state) => state.pets.pets);
+  const cards = useSelector((state) => state.searchCards.searchCards);
+  console.log(pets);
+  console.log(cards);
   return (
     <ReactModal
+      ariaHideApp={false}
       isOpen={isOpen}
       onRequestClose={closeModal}
       style={customStyles}
@@ -34,6 +40,7 @@ function AnketsModal({ isOpen, closeModal, setChoosedPet }) {
         <div className='ankets-modal__pets'>
           {pets.map((pet) => (
             <div
+              key={pet.id}
               className='ankets-modal__pet'
               onClick={() => {
                 setChoosedPet(pet);
@@ -64,6 +71,21 @@ function AnketsModal({ isOpen, closeModal, setChoosedPet }) {
         </div>
       </div>
             </div>
+            </div>
+          ))}
+
+          {cards.map((card) => (
+            <div
+              key={card.id}
+              className='ankets-modal__pet'
+              onClick={() => {
+                setChoosedPet(card);
+                closeModal();
+              }}
+            >
+              <p>{card.id}</p>
+              <p>{card.description}</p>
+              <p>{card.recipient.name}</p>
             </div>
           ))}
         </div>

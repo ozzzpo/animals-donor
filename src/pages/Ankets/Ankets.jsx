@@ -3,15 +3,27 @@ import Footer from "../../components/modules/Footer/Footer";
 import "./Ankets.scss";
 import { Link, useLocation } from "react-router-dom";
 import AnketCard from "../../components/common/AnketCard/AnketCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AnketsModal from "./AnketsModal";
+import { useDispatch, useSelector } from "react-redux";
+import { matchDonors, matchRecipients } from "../../store/pets/actions";
 function Ankets() {
   const location = useLocation();
   const meLocation = location.state;
   const [me, setMe] = useState(meLocation);
   const [isOpen, setIsOpen] = useState(false);
   const [choosedPet, setChoosedPet] = useState({});
-  console.log(choosedPet);
+  const dispatch = useDispatch();
+  console.log(me);
+  useEffect(() => {
+    if (me === "donor") {
+      dispatch(matchRecipients(choosedPet.id));
+    } else if (me === "recipient") {
+      dispatch(matchDonors(choosedPet.id));
+    }
+  }, [dispatch, me]);
+  const matchingPets = useSelector((state) => state.pets.matchingPets);
+  console.log(matchingPets);
   return (
     <>
       <Header />
@@ -23,28 +35,29 @@ function Ankets() {
           <h1>ПОДБОР АНКЕТ</h1>
           <div className='ank_btns'>
             <div className='btn_up'>
-              {choosedPet?.name && <div className='choosed-pet'>
-              {
-        choosedPet?.pet_type?.name == 'Кошка' ? 
-        <img src='./cat_skelet.png' alt='' /> : 
-        choosedPet?.pet_type?.name == 'Собака' ?
-        <img src='./dog_skelet.png' alt='' /> :
-        choosedPet?.pet_type?.name == 'Грызун' ? 
-        <img src='./grizun_skelet.png' alt='' /> :
-        choosedPet?.pet_type?.name == 'Птица' ? 
-        <img src='./bird_skelet.png' alt='' /> :
-        <img src='./ekzo_skelet.png' alt='' /> 
-      }         
-      <div className="choosed_info">
-                <p>Кличка: {choosedPet?.name}</p>
-                <p>Порода: {choosedPet?.breed}</p>
-                <p>{choosedPet?.pet_type.name}</p>
+              {choosedPet?.name && (
+                <div className='choosed-pet'>
+                  {choosedPet?.pet_type?.name == "Кошка" ? (
+                    <img src='./cat_skelet.png' alt='' />
+                  ) : choosedPet?.pet_type?.name == "Собака" ? (
+                    <img src='./dog_skelet.png' alt='' />
+                  ) : choosedPet?.pet_type?.name == "Грызун" ? (
+                    <img src='./grizun_skelet.png' alt='' />
+                  ) : choosedPet?.pet_type?.name == "Птица" ? (
+                    <img src='./bird_skelet.png' alt='' />
+                  ) : (
+                    <img src='./ekzo_skelet.png' alt='' />
+                  )}
+                  <div className='choosed_info'>
+                    <p>Кличка: {choosedPet?.name}</p>
+                    <p>Порода: {choosedPet?.breed}</p>
+                    <p>{choosedPet?.pet_type.name}</p>
+                  </div>
                 </div>
-              </div>}
+              )}
               <button onClick={() => setIsOpen(true)}>
                 Добавить животного
               </button>
-              
             </div>
             <div className='btn_down'>
               <button
@@ -85,13 +98,7 @@ function Ankets() {
                   : "Доноры"
                 : "Реципиенты/Доноры"}
             </h2>
-            <div className='anketsCards'>
-              <AnketCard></AnketCard>
-              <AnketCard></AnketCard>
-              <AnketCard></AnketCard>
-              <AnketCard></AnketCard>
-              <AnketCard></AnketCard>
-            </div>
+            <div className='anketsCards'></div>
           </div>
         </div>
       </div>
