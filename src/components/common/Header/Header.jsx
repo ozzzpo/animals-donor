@@ -8,42 +8,14 @@ import exit from "../../../assets/icons/exit.png";
 import { Link } from "react-router-dom";
 import { logout } from "../../../store/user/userSlice";
 import { useLocation } from "react-router-dom";
-const customStyles = {
-  content: {
-    padding: 0,
-    margin: 0,
-    width: "1000px",
-    height: "500px",
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
-function Header() {
+
+function Header({ setModalState }) {
   const location = useLocation();
-  const [modalState, setModalState] = useState({
-    isOpen: false,
-    view: "",
-  });
+
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.user.isAuth);
   const user = useSelector((state) => state.user.user);
-  const closeModal = () => {
-    setModalState((state) => ({
-      ...state,
-      isOpen: false,
-      view: "",
-    }));
-  };
-  const changeView = (view) => {
-    setModalState((state) => ({
-      ...state,
-      view,
-    }));
-  };
+
   return (
     <>
       <div className='header'>
@@ -119,12 +91,6 @@ function Header() {
         )}
       </div>
       <div className='headLine'></div>
-      <Modal
-        modalState={modalState}
-        closeModal={closeModal}
-        changeView={changeView}
-        customStyles={customStyles}
-      />
     </>
   );
 }

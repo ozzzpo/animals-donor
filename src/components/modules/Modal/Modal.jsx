@@ -6,7 +6,7 @@ import RegisterForm from "../Form/RegisterForm";
 import "./Modal.scss";
 
 function Modal({ modalState, closeModal, customStyles, changeView }) {
-  const { view, isOpen } = modalState;
+  const { isOpen, view } = modalState;
   return (
     <ReactModal
       isOpen={isOpen}

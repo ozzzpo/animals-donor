@@ -4,10 +4,14 @@ import "./Ankets.scss";
 import { Link, useLocation } from "react-router-dom";
 import AnketCard from "../../components/common/AnketCard/AnketCard";
 import { useState } from "react";
+import AnketsModal from "./AnketsModal";
 function Ankets() {
   const location = useLocation();
   const meLocation = location.state;
   const [me, setMe] = useState(meLocation);
+  const [isOpen, setIsOpen] = useState(false);
+  const [choosedPet, setChoosedPet] = useState({});
+  console.log(choosedPet);
   return (
     <>
       <Header />
@@ -19,7 +23,14 @@ function Ankets() {
           <h1>ПОДБОР АНКЕТ</h1>
           <div className='ank_btns'>
             <div className='btn_up'>
-              <button>Добавить животного</button>
+              <div className='choosed-pet'>
+                <p>{choosedPet.name}</p>
+                <p>{choosedPet.breed}</p>
+                <p>{choosedPet.pet_type.name}</p>
+              </div>
+              <button onClick={() => setIsOpen(true)}>
+                Добавить животного
+              </button>
             </div>
             <div className='btn_down'>
               <button
@@ -71,6 +82,11 @@ function Ankets() {
         </div>
       </div>
       <Footer></Footer>
+      <AnketsModal
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        setChoosedPet={setChoosedPet}
+      />
     </>
   );
 }

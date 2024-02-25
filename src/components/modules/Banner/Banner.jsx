@@ -1,8 +1,9 @@
 import "./banner.css";
 import dog from "../../../assets/images/dog image.svg";
 import { Link, useNavigate } from "react-router-dom";
-function Banner() {
-  const navigate = useNavigate();
+import { useSelector } from "react-redux";
+function Banner({ openModal }) {
+  const isAuth = useSelector((state) => state.user.isAuth);
   return (
     <div className='banner'>
       <div className='ban_txt'>
@@ -15,10 +16,28 @@ function Banner() {
           </p>
         </div>
         <div className='ban_btn'>
-          <Link className='ban_btn_link' to='/ankets' state={"donor"}>
+          <Link
+            className='ban_btn_link'
+            to={isAuth ? "/ankets" : "/"}
+            onClick={() => {
+              if (!isAuth) {
+                openModal();
+              }
+            }}
+            state={"donor"}
+          >
             Сдать кровь
           </Link>
-          <Link className='ban_btn_link' to='/ankets' state={"recipient"}>
+          <Link
+            className='ban_btn_link'
+            to={isAuth ? "/ankets" : "/"}
+            onClick={() => {
+              if (!isAuth) {
+                openModal();
+              }
+            }}
+            state={"recipient"}
+          >
             Получить помощь
           </Link>
         </div>
