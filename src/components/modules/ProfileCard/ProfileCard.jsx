@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import defaultImage from "../../../assets/images/1392554736_2135986208.jpg";
+import defaultImage from "../../../assets/images/default.jpg";
 import "./ProfileCard.scss";
 function ProfileCard() {
   let user = useSelector((state) => state.user.user);

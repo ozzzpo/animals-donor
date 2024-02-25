@@ -12,18 +12,13 @@ import { useEffect } from "react";
 import { tgApi } from "../../api/services/tg.service";
 
 function Main() {
-  useEffect(() => {
-    tgApi()
-      .createLinkRequest()
-      .then((data) => console.log(data));
-  }, []);
   return (
     <div className='main'>
       <Header />
       <Banner />
       <Important />
       <Donors />
-      <BaseKnow></BaseKnow>
+      <BaseKnow />
       <Footer />
     </div>
   );

@@ -1,7 +1,8 @@
 import "./banner.css";
 import dog from "../../../assets/images/dog image.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function Banner() {
+  const navigate = useNavigate();
   return (
     <div className='banner'>
       <div className='ban_txt'>
@@ -14,10 +15,10 @@ function Banner() {
           </p>
         </div>
         <div className='ban_btn'>
-          <Link className='ban_btn_link' to='/ankets'>
+          <Link className='ban_btn_link' to='/ankets' state={"donor"}>
             Сдать кровь
           </Link>
-          <Link className='ban_btn_link' to='/ankets'>
+          <Link className='ban_btn_link' to='/ankets' state={"recipient"}>
             Получить помощь
           </Link>
         </div>

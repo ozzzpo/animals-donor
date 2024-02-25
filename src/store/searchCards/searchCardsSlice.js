@@ -1,9 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addSearchCard, fetchSearchCards, getSearchCardById } from "./actions";
+import {
+  addSearchCard,
+  fetchSearchCards,
+  getSearchCardById,
+  getFirstActiveSearchCards,
+} from "./actions";
 const searchCardsSlice = createSlice({
   name: "searchCards",
   initialState: {
     searchCards: [],
+    lastSearchCards: [],
     status: "ready",
     error: null,
   },
@@ -37,6 +43,9 @@ const searchCardsSlice = createSlice({
     });
     builder.addCase(addSearchCard.rejected, (state) => {
       state.status = "rejected";
+    });
+    builder.addCase(getFirstActiveSearchCards.fulfilled, (state, action) => {
+      state.lastSearchCards = action.payload;
     });
   },
 });

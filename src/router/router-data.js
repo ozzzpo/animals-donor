@@ -10,6 +10,7 @@ import DonorInfo from "../pages/DonorInfo/DonorInfo";
 import HelpPet from "../pages/HelpPet/HelpPet";
 import RecipientInfo from "../pages/RecipientInfo/RecipientInfo";
 import Ankets from "../pages/Ankets/Ankets";
+import DonorRequest from "../pages/DonorRequest/DonorRequest";
 
 export const routes = [
   {
@@ -28,9 +29,9 @@ export const routes = [
     path: "/ankets",
     element: (
       <ProtectedRoute>
-        <Ankets/>
+        <Ankets />
       </ProtectedRoute>
-    )
+    ),
   },
   {
     path: "/donor",
@@ -65,6 +66,14 @@ export const routes = [
     element: (
       <ProtectedRoute>
         <AddPet />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/request",
+    element: (
+      <ProtectedRoute>
+        <DonorRequest />
       </ProtectedRoute>
     ),
   },

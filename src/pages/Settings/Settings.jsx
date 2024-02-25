@@ -3,7 +3,7 @@ import Header from "../../components/common/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../components/modules/Footer/Footer";
 import "./Settings.scss";
-import defaultImage from "../../assets/images/1392554736_2135986208.jpg";
+import defaultImage from "../../assets/images/default.jpg";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
 import { useForm } from "react-hook-form";

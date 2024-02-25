@@ -30,7 +30,12 @@ function SearchCardModal({ isOpen, setIsOpen, pet }) {
         is_active: true,
         recipient_id: pet.id,
       })
-    );
+    ).then((data) => {
+      if (data?.error) {
+      } else {
+        closeModal();
+      }
+    });
   };
   return (
     <ReactModal isOpen={isOpen} onRequestClose={closeModal} ariaHideApp={false}>

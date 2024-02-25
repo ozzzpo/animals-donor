@@ -14,7 +14,7 @@ const searchCardsApi = () => {
       return apiClient.patch(`search_cards/${cardId}`, updatedCard);
     },
     getFirstActiveSearchCards: () => {
-      return apiClient.get("search_cards");
+      return apiClient.get("search_cards?limit=5");
     },
   };
 };
