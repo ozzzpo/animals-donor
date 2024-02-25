@@ -22,6 +22,7 @@ function RegisterForm({ closeModal, changeView }) {
       })
     ).then((data) => {
       if (data?.error) setError("Такая почта уже зарегистрирована!");
+      if (!data.error) changeView("log in");
     });
   };
   return (
