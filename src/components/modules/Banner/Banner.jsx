@@ -1,4 +1,5 @@
 import './banner.css'
+import { Link } from 'react-router-dom';
 function Banner() {
     return ( 
         <div className="banner">
@@ -9,8 +10,8 @@ function Banner() {
                     <p>Как и у людей, у животных порой необходимо донорство. Эта процедура спасает многих кошек и собак, продлевает их жизнь</p>
                 </div>
                 <div className="ban_btn">
-                    <button>Сдать кровь</button>
-                    <button>Получить помощь</button>
+                    <Link className="ban_btn_link" to='/ankets'>Сдать кровь</Link>
+                    <Link className="ban_btn_link" to='/ankets'>Получить помощь</Link>
                 </div>
             </div>
             <div className="ban_img">

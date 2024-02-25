@@ -1,0 +1,77 @@
+.razdel_ankets{
+    background-color: rgba(241, 247, 255, 1);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    min-height: 60vh;
+    .center_razdel{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        h1{
+            font-size: 48px;
+            font-family: 'TTT';
+            font-weight: 600;
+            color: #678CD3;
+        }
+        .link_arrow{
+            align-self: flex-start;
+        }
+        .arrow{
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .arrow:hover{
+            transform: translateX(-5px);
+            transition: 0.5s;
+        }
+        .ank_btns{
+            align-self: flex-start;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .btn_down{
+                display: flex;
+                gap: 20px;
+            }
+            button{
+                background-color: #F1F7FF;
+                border-radius: 16px;
+                border: 2px solid #678CD3;
+                color:#678CD3;
+                transition: 0.5s;
+                padding: 15px 35px;
+                font-family: 'TTT';
+                font-size: 20px;
+            }
+            button:hover{
+                background-color: #678CD3;
+                color: #F1F7FF;
+                transition: 0.5s;
+                cursor: pointer;
+            }
+        }
+        .anketsBlock{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 20px;
+            h2{
+                align-self: flex-start;
+                font-size: 28px;
+                font-family: 'TTT';
+                font-weight: 600;
+            }
+            .anketsCards{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                gap: 30px;
+            }
+        }
+    }
+}

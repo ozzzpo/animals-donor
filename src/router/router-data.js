@@ -9,6 +9,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import DonorInfo from "../pages/DonorInfo/DonorInfo";
 import HelpPet from "../pages/HelpPet/HelpPet";
 import RecipientInfo from "../pages/RecipientInfo/RecipientInfo";
+import Ankets from "../pages/Ankets/Ankets";
 
 export const routes = [
   {
@@ -22,6 +23,14 @@ export const routes = [
         <Dashboard />
       </ProtectedRoute>
     ),
+  },
+  {
+    path: "/ankets",
+    element: (
+      <ProtectedRoute>
+        <Ankets/>
+      </ProtectedRoute>
+    )
   },
   {
     path: "/donor",
