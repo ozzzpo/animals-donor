@@ -126,3 +126,20 @@
     justify-content: space-between;
   }
 }
+.create_zapros{
+    width: 100%;
+    padding: 15px 0;
+    border: 2px solid #678CD3;
+    border-radius: 16px;
+    cursor: pointer;
+    background-color: #678CD3;
+    color:#F1F7FF ;
+    font-size: 18px;
+    font-family: 'TTT';
+    font-weight: 600;
+    transition: 0.5s;
+}
+.create_zapros:hover{
+    background-color: #F1F7FF;
+    color: #678CD3;
+}

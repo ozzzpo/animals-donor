@@ -86,6 +86,7 @@ function ChangePet() {
             ) : (
               ""
             )}
+            <button className="create_zapros" onClick={() => setIsOpen(true)}>Создать запрос</button>
             <Link style={{ width: "100%" }} to='/dashboard'>
               <button className='change-pet__btn'>Назад</button>
             </Link>
@@ -145,7 +146,6 @@ function ChangePet() {
             <ChangePetInfo pet={pet} />
           )}
         </div>
-        <button onClick={() => setIsOpen(true)}>Создать запрос</button>
         <SearchCardModal isOpen={modalIsOpen} setIsOpen={setIsOpen} pet={pet} />
       </div>
       <Footer />
