@@ -10,6 +10,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { addPet, getTypes } from "../../store/pets/actions";
 import Select from "react-select";
 import getOptions from "../../utils/getOptions";
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 function AddPet() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -22,18 +24,20 @@ function AddPet() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(addPetSchema) });
   const navigate = useNavigate();
+  const [date, setDate] = useState(new Date());
   const [choosedOption, setChoosedOption] = useState({
     value: 1,
     label: "Собака",
   });
   console.log(choosedOption);
+  console.log(date);
   const onSubmit = (data) => {
     dispatch(
       addPet({
         name: data.name,
         breed: data.breed,
         blood_type: data.bloodType,
-        birthday: data.birthDate,
+        birthday: data.birthday,
         weight: data.weight,
         pet_type_id: choosedOption.value,
         role: "donor",
