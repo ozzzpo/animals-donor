@@ -20,7 +20,7 @@ function ProfileCard() {
       <div className='profile-card__info'>
         <p className='profile-card__name'>
           {user?.first_name
-            ? `${user?.second_name} ${user.first_name} ${user?.patronymic}`
+            ? `${user?.second_name} ${user.first_name} `
             : "Ваше имя"}
         </p>
         <p className='profile-card__location'>

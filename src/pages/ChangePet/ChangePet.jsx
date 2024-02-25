@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/common/Header/Header";
 import Footer from "../../components/modules/Footer/Footer";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../AddPet/AddPet.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
@@ -14,22 +14,26 @@ function ChangePet() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isEditMode, setIsEditMode] = useState(false);
-  const pet = useSelector((state) => state.pets.currentPet);
+  const location = useLocation();
+  const pet = location.state;
   console.log(pet);
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(addPetSchema) });
+  } = useForm();
   const onSubmit = (data) => {
     dispatch(
       updatePet({
-        name: data.name,
-        breed: data.breed,
-        blood_type: data.bloodType,
-        birthday: data.birthDate,
-        weight: data.weight,
-        role: "donor",
+        petId: pet.id,
+        pet: {
+          name: data.name ? data.name : pet.name,
+          breed: data.breed ? data.breed : pet.breed,
+          blood_type: data.bloodType ? data.bloodType : pet.blood_type,
+          birthday: data.birthDate ? data.birthDate : pet.birthday,
+          weight: data.weight ? data.weight : pet.weight,
+          pet_type_id: pet.pet_type.id,
+        },
       })
     ).then((data) => {
       if (data?.error) {
@@ -107,12 +111,16 @@ function ChangePet() {
             <div className='change__info'>
               <label>{pet?.pet_type?.name}</label>
               <p>Порода: </p>
-              <label>{pet.breed}</label>
+              <label>{pet?.breed}</label>
               <p>Группа крови: </p>
-              <label>{pet.blood_type}</label>
+              <label>{pet?.blood_type}</label>
               <p>Дата рождения: </p>
-              <label>{pet.birthday}</label>
-              <p>Вес: {pet.weight}</p>
+              <label>{pet?.birthday}</label>
+              <p>Вес: {pet?.weight}</p>
+              <p>Не доступен:</p>
+              <label>{pet?.unavailable_lists}</label>
+              <p>Вакцины:</p>
+              <label>{pet?.vaccinations}</label>
             </div>
           )}
         </div>

@@ -5,7 +5,6 @@ const petsSlice = createSlice({
   initialState: {
     types: [],
     pets: [],
-    currentPet: {},
     status: "ready",
     error: null,
   },
@@ -26,14 +25,9 @@ const petsSlice = createSlice({
         state.status = "loading";
       })
       .addCase(getPetById.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.status = "ready";
         state.currentPet = action.payload;
       })
-      .addCase(getPetById.rejected, (state, action) => {})
-      .addCase(updatePet.pending, (state, action) => {})
-      .addCase(updatePet.fulfilled, (state, action) => {})
-      .addCase(updatePet.rejected, (state, action) => {})
       .addCase(addPet.pending, (state) => {
         state.status = "loading";
       })

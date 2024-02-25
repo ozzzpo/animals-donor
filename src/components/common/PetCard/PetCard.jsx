@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { getPetById } from "../../../store/pets/actions";
 function PetCard({ pet }) {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   return (
     <div className='pet_card'>
       <img src='./dog image.png' alt='' />
@@ -21,8 +20,7 @@ function PetCard({ pet }) {
         <div className='pet_btn'>
           <button
             onClick={() => {
-              navigate("/petInfo");
-              dispatch(getPetById(pet.id));
+              navigate("/petInfo", { state: pet });
             }}
           >
             Подробнее

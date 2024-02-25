@@ -24,7 +24,6 @@ function Settings() {
     const newMe = {
       second_name: data?.secondName ? data.secondName : user?.secondName,
       first_name: data?.firstName ? data.firstName : user?.firstName,
-      patronymic: data?.thirdName ? data.thirdName : user?.thirdName,
       city: data?.city ? data.city : user?.city,
       phone: data?.phone ? data.phone : user?.phone,
       email: data?.email ? data.email : user?.email,
@@ -51,11 +50,6 @@ function Settings() {
               {...register("secondName")}
             />
             <input type='text' placeholder='Имя' {...register("firstName")} />
-            <input
-              type='text'
-              placeholder='Отчество'
-              {...register("thirdName")}
-            />
             <input type='text' placeholder='Город' {...register("city")} />
             <div className='settings__input-with_checkbox'>
               <input type='text' placeholder='Телефон' {...register("phone")} />

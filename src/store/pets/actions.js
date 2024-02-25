@@ -14,6 +14,7 @@ export const getPetById = createAsyncThunk(
   async (petId, { rejectWithValue }) => {
     try {
       const response = await petsApi().getPetById(petId);
+      console.log(response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -22,9 +23,9 @@ export const getPetById = createAsyncThunk(
 );
 export const updatePet = createAsyncThunk(
   "pets/updatePet",
-  async ({ petId }, { rejectWithValue }) => {
+  async ({ petId, pet }, { rejectWithValue }) => {
     try {
-      const response = await petsApi().updatePet(petId);
+      const response = await petsApi().updatePet(petId, pet);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

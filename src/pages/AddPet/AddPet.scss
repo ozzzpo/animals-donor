@@ -18,6 +18,11 @@
     display: flex;
     gap: 20px;
   }
+  &__select {
+    color: #678cd3;
+    font-family: "TTT";
+    border-radius: 20px;
+  }
 }
 .pet_photo {
   display: flex;
@@ -48,7 +53,7 @@
     border: 2px solid #678cd3;
     transition: 0.5s;
   }
-  img{
+  img {
     width: 70%;
   }
 }
@@ -91,13 +96,13 @@
     font-size: 20px;
     font-family: "TTT";
     font-weight: 500;
-    border: 2px solid #678CD3;
+    border: 2px solid #678cd3;
     border-radius: 16px;
     cursor: pointer;
     transition: 0.5s;
   }
   button:hover {
-    color: #678CD3;
+    color: #678cd3;
     background-color: #f1f7ff;
     transition: 0.5s;
   }

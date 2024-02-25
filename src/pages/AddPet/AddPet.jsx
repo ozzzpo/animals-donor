@@ -22,7 +22,10 @@ function AddPet() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(addPetSchema) });
   const navigate = useNavigate();
-  const [choosedOption, setChoosedOption] = useState(null);
+  const [choosedOption, setChoosedOption] = useState({
+    value: 1,
+    label: "Собака",
+  });
   console.log(choosedOption);
   const onSubmit = (data) => {
     dispatch(
@@ -59,9 +62,19 @@ function AddPet() {
           <form onSubmit={handleSubmit(onSubmit)} className='pet_inp'>
             <div className='pet_inp--err'>
               <Select
+                className='add_pet__select'
                 options={types}
                 onChange={setChoosedOption}
                 defaultValue={choosedOption}
+                styles={{
+                  control: (baseStyles) => ({
+                    ...baseStyles,
+                    border: "2px solid #678cd3",
+                    borderRadius: "16px",
+                    padding: "4px",
+                    fontSize: "20px",
+                  }),
+                }}
               />
               <p>{errors.type?.message}</p>
             </div>

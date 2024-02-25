@@ -5,6 +5,7 @@ import Donors from "../../components/modules/Donors/Donors";
 import Footer from "../../components/modules/Footer/Footer";
 import BaseKnow from "../../components/modules/BaseKnow/BaseKnow";
 import "./main.css";
+import dog from "../../assets/images/dog image.svg";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
