@@ -53,6 +53,16 @@ function Header() {
           </Link>
         </div>
         <div className='unit'>
+          {
+            location.pathname != "/" && (
+              <>
+               <a className='link' href='/'>
+            Главная страница
+          </a>
+          <p>|</p>
+              </>
+            )
+          }
           {location.pathname == "/" && (
             <>
               <a className='link' href='#don'>
@@ -61,10 +71,7 @@ function Header() {
               <p>|</p>
             </>
           )}
-          <a className='link' href='#'>
-            Топ доноров
-          </a>
-          <p>|</p>
+         
           <div className='dropdown'>
             <p className='dropbtn link'>Важная информация</p>
             <div className='dropdown-content'>
