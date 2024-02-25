@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/common/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../components/modules/Footer/Footer";
@@ -7,7 +7,7 @@ import defaultImage from "../../assets/images/default.jpg";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
 import { useForm } from "react-hook-form";
-import { changeMe } from "../../store/user/actions";
+import { changeMe, getTgLink } from "../../store/user/actions";
 import { Link, useNavigate } from "react-router-dom";
 
 function Settings() {
@@ -31,12 +31,19 @@ function Settings() {
     dispatch(changeMe(newMe));
     navigate("/dashboard");
   };
+  useEffect(() => {
+    dispatch(getTgLink());
+  }, [dispatch]);
+  const tgLink = useSelector((store) => store.user.tgLink);
   return (
     <div className='settings'>
       <Header />
       <div className='settings__content'>
         <div className='settings__photo'>
           <img src={user?.avatar ? user.avatar : defaultImage} alt='' />
+          <a className='settings__upload' href={tgLink.link_url}>
+            Верифицировать номер через Telegram
+          </a>
           <Link to='/dashboard' className='settings__upload'>
             Назад
           </Link>

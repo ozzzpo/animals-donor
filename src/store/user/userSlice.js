@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUser, registerUser, changeMe } from "./actions";
+import { loginUser, registerUser, changeMe, getTgLink } from "./actions";
 const userSlice = createSlice({
   name: "user",
   initialState: {
@@ -20,6 +20,7 @@ const userSlice = createSlice({
     isAuth: localStorage.getItem("authToken") || false,
     status: "ready",
     error: null,
+    tgLink: "",
   },
   reducers: {
     logout(state) {
@@ -75,6 +76,9 @@ const userSlice = createSlice({
         state.user = { ...state.user, ...action.payload };
         // localStorage.removeItem("user");
         // localStorage.setItem("user", JSON.stringify(state.user));
+      })
+      .addCase(getTgLink.fulfilled, (state, action) => {
+        state.tgLink = action.payload;
       });
   },
 });

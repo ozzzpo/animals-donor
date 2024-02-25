@@ -37,7 +37,7 @@ function AddPet() {
         name: data.name,
         breed: data.breed,
         blood_type: data.bloodType,
-        birthday: data.birthday,
+        birthday: data.birthDate,
         weight: data.weight,
         pet_type_id: choosedOption.value,
         role: "donor",

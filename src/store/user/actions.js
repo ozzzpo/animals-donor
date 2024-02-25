@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import authApi from "../../api/services/auth.service";
+import { tgApi } from "../../api/services/tg.service";
 
 export const loginUser = createAsyncThunk(
   "user/loginUser",
@@ -47,6 +48,18 @@ export const changeMe = createAsyncThunk(
       return response.data;
     } catch (error) {
       console.log(error.message);
+    }
+  }
+);
+
+export const getTgLink = createAsyncThunk(
+  "user/getTgLink",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await tgApi().createLinkRequest();
+      return response.data;
+    } catch (error) {
+      return rejectWithValue;
     }
   }
 );
