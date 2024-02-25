@@ -8,9 +8,6 @@ export const addSchema = yup.object().shape({
   bloodAmount: yup.number().typeError("Введите числовое значение!").required(),
   activeUntil: yup
     .string()
-    .matches(
-      /\d{4}-(0[1][2][3][4][5][6][7][8]|1[1][2])-(0[1][2][3][4][5][6][7][8]|\d|3[01])$/,
-      "Введите дату в формате ГГГГ-ММ-ДД"
-    )
+    .matches(/^\d{4}\-\d{2}\-\d{2}$/, "Введите дату в формате ГГГГ-ММ-ДД")
     .required(),
 });
