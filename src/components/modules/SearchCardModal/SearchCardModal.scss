@@ -1,0 +1,36 @@
+.create-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "TTT";
+  gap: 15px;
+  h2 {
+    font-size: 30px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    label {
+      margin-top: 10px;
+    }
+    input {
+      margin-top: 4px;
+      font-size: 16px;
+      border-radius: 16px;
+      border: 2px solid #678cd3;
+      padding: 5px 10px;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      border: 2px solid #678cd3;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 10px;
+      font-family: "TTT";
+      background-color: transparent;
+      font-size: 16px;
+    }
+  }
+}

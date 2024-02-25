@@ -11,10 +11,25 @@ import { updatePet } from "../../store/pets/actions";
 import Toggle from "react-toggle";
 import "./ChangePet.scss";
 import ChangePetInfo from "./ChangePetInfo";
+import ReactModal from "react-modal";
+import SearchCardModal from "../../components/modules/SearchCardModal/SearchCardModal";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 function ChangePet() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isEditMode, setIsEditMode] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   const location = useLocation();
   const pet = location.state;
   console.log(pet);
@@ -119,6 +134,8 @@ function ChangePet() {
             <ChangePetInfo pet={pet} />
           )}
         </div>
+        <button onClick={() => setIsOpen(true)}>Создать запрос</button>
+        <SearchCardModal isOpen={modalIsOpen} setIsOpen={setIsOpen} pet={pet} />
       </div>
       <Footer />
     </div>
