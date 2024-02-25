@@ -1,10 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addPet, fetchPets, getPetById, getTypes, updatePet } from "./actions";
+import {
+  addPet,
+  fetchPets,
+  getPetById,
+  getTypes,
+  matchRecipients,
+  updatePet,
+} from "./actions";
 const petsSlice = createSlice({
   name: "pets",
   initialState: {
     types: [],
     pets: [],
+    matchingPets: [],
     status: "ready",
     error: null,
   },
@@ -37,6 +45,9 @@ const petsSlice = createSlice({
       .addCase(addPet.rejected, (state) => {})
       .addCase(getTypes.fulfilled, (state, action) => {
         state.types = action.payload;
+      })
+      .addCase(matchRecipients.fulfilled, (state, action) => {
+        state.matchingPets = action.payload;
       });
   },
 });

@@ -16,6 +16,12 @@ const petsApi = () => {
     getTypes: () => {
       return apiClient.get("pet_type/");
     },
+    matchDonors: (searchCardId) => {
+      return apiClient.get(`pets/match/donors/${searchCardId}`);
+    },
+    matchRecipients: (petId) => {
+      return apiClient.post(`pets/match/recipients/${petId}`);
+    },
   };
 };
 export default petsApi;

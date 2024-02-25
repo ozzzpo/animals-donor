@@ -3,15 +3,27 @@ import Footer from "../../components/modules/Footer/Footer";
 import "./Ankets.scss";
 import { Link, useLocation } from "react-router-dom";
 import AnketCard from "../../components/common/AnketCard/AnketCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AnketsModal from "./AnketsModal";
+import { useDispatch, useSelector } from "react-redux";
+import { matchDonors, matchRecipients } from "../../store/pets/actions";
 function Ankets() {
   const location = useLocation();
   const meLocation = location.state;
   const [me, setMe] = useState(meLocation);
   const [isOpen, setIsOpen] = useState(false);
   const [choosedPet, setChoosedPet] = useState({});
-  console.log(choosedPet);
+  const dispatch = useDispatch();
+  console.log(me);
+  useEffect(() => {
+    if (me === "donor") {
+      dispatch(matchRecipients(choosedPet.id));
+    } else if (me === "recipient") {
+      dispatch(matchDonors(choosedPet.id));
+    }
+  }, [dispatch, me]);
+  const matchingPets = useSelector((state) => state.pets.matchingPets);
+  console.log(matchingPets);
   return (
     <>
       <Header />
@@ -23,11 +35,15 @@ function Ankets() {
           <h1>ПОДБОР АНКЕТ</h1>
           <div className='ank_btns'>
             <div className='btn_up'>
-              <div className='choosed-pet'>
-                <p>{choosedPet.name}</p>
-                <p>{choosedPet.breed}</p>
-                <p>{choosedPet.pet_type.name}</p>
-              </div>
+              {choosedPet?.name ? (
+                <div className='choosed-pet'>
+                  <p>{choosedPet.name}</p>
+                  <p>{choosedPet.breed}</p>
+                  <p>{choosedPet.pet_type.name}</p>
+                </div>
+              ) : (
+                ""
+              )}
               <button onClick={() => setIsOpen(true)}>
                 Добавить животного
               </button>
@@ -71,13 +87,7 @@ function Ankets() {
                   : "Доноры"
                 : "Реципиенты/Доноры"}
             </h2>
-            <div className='anketsCards'>
-              <AnketCard></AnketCard>
-              <AnketCard></AnketCard>
-              <AnketCard></AnketCard>
-              <AnketCard></AnketCard>
-              <AnketCard></AnketCard>
-            </div>
+            <div className='anketsCards'></div>
           </div>
         </div>
       </div>
