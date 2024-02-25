@@ -16,7 +16,6 @@ function AnketCard() {
                 <img src="./gps.png" alt="" />
                 <p>г.Казань, ул. Четаева, д.8</p>
             </div>
-            <button>Написать</button>
         </div>
     );
 }
