@@ -22,3 +22,8 @@
         transition: 0.5s;
     }
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+    .links_rec{
+        flex-direction: column;
+    }
+}

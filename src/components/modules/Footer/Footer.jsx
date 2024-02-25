@@ -24,7 +24,7 @@ function Footer() {
                 </div>
                 <div className="sec_sec_col">
                     <a href="/donor">Донорам</a>
-                    <a href="/repicient">Реципиентам</a>
+                    <a href="/recipient">Реципиентам</a>
                     <a href="/help">Уход и подготовка</a>
                 </div>
                 <div className="sec_sec_col">

@@ -143,3 +143,34 @@
     background-color: #F1F7FF;
     color: #678CD3;
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+    .change-pet{
+        padding: 20px 5px;
+    }
+    .change-pet__photo{
+        justify-content: center;
+        align-items: center;
+    }
+    .change-pet__content{
+        flex-direction: column;
+
+    }
+    .change-pet__info{
+        width: 100%;
+    }
+    .change-pet__form{
+        width: 100%;
+        padding: 5px;
+    }
+    .change-pet__form p{
+    }
+    .change-pet__input--err input{
+        width: 100%;
+        font-size: 20px;
+    }
+    .pet_two{
+        flex-direction: column;
+        gap: 15px;
+        width: 100% !important;
+    }
+ }

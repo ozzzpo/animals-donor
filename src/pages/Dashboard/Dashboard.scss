@@ -33,3 +33,14 @@
   align-items: center;
   gap: 40px;
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+  .dashboard__main{
+
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .req_cards{
+    padding: 5px;
+  }
+}

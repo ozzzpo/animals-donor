@@ -75,3 +75,11 @@
         }
     }
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+    .center_razdel h1{
+        font-size: 30px !important;
+    }
+    .ank_btns button{
+        padding: 15px 25px !important;
+    }
+}

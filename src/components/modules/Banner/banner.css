@@ -109,6 +109,15 @@
         text-align: center;
     }
     .ban_img{
-        display: none;
+        width: 100%;
+        padding: 50px 0;
+        justify-content: space-around;
+        align-items: start;
+    }
+    .ban_img :nth-child(1){
+        width: 40%;
+    }
+    .ban_img :nth-child(2){
+        width: 30%;
     }
   }

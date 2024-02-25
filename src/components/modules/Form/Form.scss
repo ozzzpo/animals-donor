@@ -139,3 +139,20 @@
   color: red;
   font-size: 13px;
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+    .login{
+        width: 30%;
+    }
+    .log_down_head{
+        display: none !important;
+    }
+    .log_down_soc{
+        display: none !important;
+    }
+    .log_down_reg{
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+  }

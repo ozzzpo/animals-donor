@@ -9,8 +9,8 @@ function DonorInfo() {
             <h1>ДОНОРАМ</h1>
             <div className="links">
                 <a href="#d1">Кто может стать донором?</a>
-                <a href="#d2">Процедура донации</a>
-                <a href="#d3">Противопоказания к донорству</a>
+                <a href="#d2">Противопоказания к донорству</a>
+                <a href="#d3">Процедура донации</a>
             </div>
             <div className="info">
                 <div id='d1' className="info_block1">
