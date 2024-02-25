@@ -10,6 +10,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { updatePet } from "../../store/pets/actions";
 import Toggle from "react-toggle";
 import "./ChangePet.scss";
+import ChangePetInfo from "./ChangePetInfo";
 function ChangePet() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -46,28 +47,35 @@ function ChangePet() {
   return (
     <div>
       <Header />
-      <div className='add_pet'>
-        <h2>Данные о питомце</h2>
+      <div className='change-pet'>
+        <h1>Данные о питомце</h1>
         <div className='edit-mode'>
           <h3>Режим редактирования</h3>
           <Toggle onChange={() => setIsEditMode((prev) => !prev)} />
         </div>
-        <div className='add_pet__content'>
-          <div className='pet_photo'>
-            <img src='./skelet.png' alt='' />
-            <button className='pet_photo_btn'>Добавить фото</button>
-            <Link className='pet_photo_btn' to='/dashboard'>
-              Назад
+        <div className='change-pet__content'>
+          <div className='change-pet__photo'>
+            <img src='./image.png' alt='' />
+            {isEditMode ? (
+              <button className='change-pet__btn'>Добавить фото</button>
+            ) : (
+              ""
+            )}
+            <Link style={{ width: "100%" }} to='/dashboard'>
+              <button className='change-pet__btn'>Назад</button>
             </Link>
           </div>
 
           {isEditMode ? (
-            <form onSubmit={handleSubmit(onSubmit)} className='pet_inp'>
-              <div className='pet_inp--err'>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className='change-pet__from'
+            >
+              <div className='change-pet__input--err'>
                 <input type='text' placeholder='Тип' {...register("type")} />
                 <p>{errors.type?.message}</p>
               </div>
-              <div className='pet_inp--err'>
+              <div className='change-pet__input--err'>
                 <input
                   type='text'
                   placeholder='Порода'
@@ -75,7 +83,7 @@ function ChangePet() {
                 />
                 <p>{errors.breed?.message}</p>
               </div>
-              <div className='pet_inp--err'>
+              <div className='change-pet__input--err'>
                 <input
                   type='text'
                   placeholder='Группа крови'
@@ -83,12 +91,12 @@ function ChangePet() {
                 />
                 <p>{errors.bloodType?.message}</p>
               </div>
-              <div className='pet_inp--err'>
+              <div className='change-pet__input--err'>
                 <input type='text' placeholder='Кличка' {...register("name")} />
                 <p>{errors.name?.message}</p>
               </div>
               <div className='pet_two'>
-                <div className='pet_inp--err'>
+                <div className='change-pet__input--err'>
                   <input
                     type='text'
                     placeholder='Дата рождения(год-месяц-день)'
@@ -96,7 +104,7 @@ function ChangePet() {
                   />
                   <p>{errors.birthDate?.message}</p>
                 </div>
-                <div className='pet_inp--err'>
+                <div className='change-pet__input--err'>
                   <input
                     type='text'
                     placeholder='Вес(кг)'
@@ -108,20 +116,7 @@ function ChangePet() {
               <button type='submit'>Сохранить</button>
             </form>
           ) : (
-            <div className='change__info'>
-              <label>{pet?.pet_type?.name}</label>
-              <p>Порода: </p>
-              <label>{pet?.breed}</label>
-              <p>Группа крови: </p>
-              <label>{pet?.blood_type}</label>
-              <p>Дата рождения: </p>
-              <label>{pet?.birthday}</label>
-              <p>Вес: {pet?.weight}</p>
-              <p>Не доступен:</p>
-              <label>{pet?.unavailable_lists}</label>
-              <p>Вакцины:</p>
-              <label>{pet?.vaccinations}</label>
-            </div>
+            <ChangePetInfo pet={pet} />
           )}
         </div>
       </div>
