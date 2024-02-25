@@ -198,3 +198,35 @@
         }
     }
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+    .info_txt{
+        width: 90% !important;
+    }
+    .links{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .info_block2{
+        flex-direction: column;
+        img{
+            width: 90% !important;
+            height: 100% !important;
+        }
+    }
+    .info_block3{
+        flex-direction: column;
+    }
+    .info_imgs img:nth-child(3){
+        display: none;
+    }
+    .info_imgs img:nth-child(2){
+        display: none;
+    }
+    .info_imgs{
+        width: 90% !important; 
+    }
+    .info_imgs img:nth-child(1){
+        width: 100%;
+        height: 100%;
+    }
+}

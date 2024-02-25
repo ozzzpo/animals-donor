@@ -54,3 +54,13 @@
   box-shadow: -10px -10px 10px 0px rgba(241, 247, 255, 1);
   z-index: 90;
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+   .pets_card__content{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+   } 
+   .pets_cards{
+    width: 100%;
+   }
+}

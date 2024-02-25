@@ -127,3 +127,19 @@ p {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+@media screen and (max-width: 500px) and (min-width: 360px){
+  .header{
+    padding: 0px;
+  }
+  .unit{
+    display: none;
+  }
+  .header__avatar{
+    gap: 5px;
+  }
+  .logIn{
+    width: 50%;
+    justify-content: space-around;
+  }
+}

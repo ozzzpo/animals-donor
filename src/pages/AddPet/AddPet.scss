@@ -111,3 +111,22 @@
     transition: 0.5s;
   }
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+.add_pet{
+    padding: 20px 5px;
+}
+.add_pet__content{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pet_photo{
+    width: 100%;
+    gap: 20px;
+}
+.pet_inp{
+    width: 100%;
+}
+  }
+  

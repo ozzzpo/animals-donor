@@ -50,3 +50,9 @@
   align-items: center;
   gap: 20px;
 }
+
+@media screen and (max-width: 500px) and (min-width: 360px){
+  .don_card{
+    width: 100%;
+  }
+}

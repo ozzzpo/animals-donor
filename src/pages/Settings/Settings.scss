@@ -91,3 +91,11 @@
 .react-toggle-thumb {
   box-shadow: none !important;
 }
+@media screen and (max-width: 500px) and (min-width: 360px){
+  .settings__content{
+    flex-direction: column;
+  }
+  .settings__form{
+    width: 100%;
+  }
+}
