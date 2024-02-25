@@ -35,14 +35,25 @@ function Ankets() {
           <h1>ПОДБОР АНКЕТ</h1>
           <div className='ank_btns'>
             <div className='btn_up'>
-              {choosedPet?.name ? (
+              {choosedPet?.name && (
                 <div className='choosed-pet'>
-                  <p>{choosedPet.name}</p>
-                  <p>{choosedPet.breed}</p>
-                  <p>{choosedPet.pet_type.name}</p>
+                  {choosedPet?.pet_type?.name == "Кошка" ? (
+                    <img src='./cat_skelet.png' alt='' />
+                  ) : choosedPet?.pet_type?.name == "Собака" ? (
+                    <img src='./dog_skelet.png' alt='' />
+                  ) : choosedPet?.pet_type?.name == "Грызун" ? (
+                    <img src='./grizun_skelet.png' alt='' />
+                  ) : choosedPet?.pet_type?.name == "Птица" ? (
+                    <img src='./bird_skelet.png' alt='' />
+                  ) : (
+                    <img src='./ekzo_skelet.png' alt='' />
+                  )}
+                  <div className='choosed_info'>
+                    <p>Кличка: {choosedPet?.name}</p>
+                    <p>Порода: {choosedPet?.breed}</p>
+                    <p>{choosedPet?.pet_type.name}</p>
+                  </div>
                 </div>
-              ) : (
-                ""
               )}
               <button onClick={() => setIsOpen(true)}>
                 Добавить животного
