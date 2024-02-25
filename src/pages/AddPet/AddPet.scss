@@ -16,6 +16,7 @@
   }
   &__content {
     display: flex;
+    justify-content: center;
     gap: 20px;
   }
   &__select {
@@ -25,11 +26,13 @@
   }
 }
 .pet_photo {
+    width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   .pet_photo_btn {
+    width: 100%;
     border-radius: 16px;
     background-color: #f1f7ff;
     color: #678cd3;
@@ -45,7 +48,6 @@
     justify-content: center;
     align-items: center;
     transition: 0.5s;
-    width: 100%;
   }
   .pet_photo_btn:hover {
     background-color: #678cd3;
@@ -54,14 +56,14 @@
     transition: 0.5s;
   }
   img {
-    width: 70%;
+    width:100%;
     border: 2px solid #678CD3;
     border-radius: 16px;
   }
 }
 .pet_inp {
   padding: 3px 0;
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   height: 100%;
