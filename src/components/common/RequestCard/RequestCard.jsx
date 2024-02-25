@@ -5,7 +5,7 @@ function RequestCard() {
   return (
     <div className='requestCard'>
       {searchCards.map((searchCard) => (
-        <>
+        <div className="card_req">
           <img src='./dog.png' alt='' />
           <div className='req_info'>
             <div className='bl_type'>
@@ -26,7 +26,7 @@ function RequestCard() {
               <button>Удалить</button>
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );

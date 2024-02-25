@@ -1,22 +1,35 @@
-.requestCard {
-  width: 100%;
+.card_req {
+  width: 90%;
   height: 324px;
   display: flex;
-  background-color: #a0c1ff;
-  justify-content: space-around;
   align-items: center;
   border-radius: 16px;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #f1f7ff;
+  gap: 50px;
+
 }
-.requestCard img {
+.requestCard{
+  border-radius: 16px;
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:30px;
+  width: 100%;
+  min-height: 324px;
+  height: 100%;
+  background-color: #a0c1ff;
+}
+.card_req img {
   width: 343px;
   height: 280px;
   border-radius: 16px;
 }
 .req_info {
-  width: 62%;
+  width: 80%;
   height: 280px;
-  border-radius: 16px;
-  background-color: #f1f7ff;
   padding: 20px;
   display: flex;
   flex-direction: column;
